@@ -1,6 +1,4 @@
-# Force Python 3.11 compatible versions that work together
 praw==7.7.1
-pandas==2.2.2
 python-telegram-bot==20.7
 schedule==1.2.0
 python-dotenv==1.0.0

@@ -1,5 +1,5 @@
 import praw
-import pandas as pd
+import csv
 from datetime import datetime, timezone
 import time
 import logging
@@ -16,6 +16,8 @@ from flask import Flask, jsonify
 import atexit
 import sys
 import traceback
+from collections import Counter
+import heapq
 
 # Force stdout/stderr to be unbuffered for better logging in Render
 sys.stdout.reconfigure(line_buffering=True)
@@ -80,6 +82,7 @@ class RedditUserTracker:
             self.data_file = os.path.join(data_dir, 'reddit_tracker_data.csv')
             self.users_file = os.path.join(data_dir, 'tracked_users.json') 
             self.last_check_file = os.path.join(data_dir, 'last_check.json')
+            self.data = [] # This will hold our data instead of a pandas DataFrame
             
             logger.info(f"Data files will be stored in: {data_dir}")
             logger.info(f"CSV file: {self.data_file}")
@@ -126,32 +129,34 @@ class RedditUserTracker:
         """Load existing tracking data"""
         try:
             if os.path.exists(self.data_file):
-                self.df = pd.read_csv(self.data_file)
-                logger.info(f"Loaded existing data with {len(self.df)} entries")
+                with open(self.data_file, 'r', newline='', encoding='utf-8') as f:
+                    reader = csv.DictReader(f)
+                    self.data = [row for row in reader]
+                logger.info(f"Loaded existing data with {len(self.data)} entries")
                 # Show some stats about existing data
-                if len(self.df) > 0:
-                    user_stats = self.df['username'].value_counts()
+                if len(self.data) > 0:
+                    user_stats = Counter(row['username'] for row in self.data)
                     logger.info(f"Data breakdown by user: {dict(user_stats)}")
-                    latest_entry = self.df['created_utc'].max()
+                    latest_entry = max(float(row['created_utc']) for row in self.data)
                     logger.info(f"Latest entry timestamp: {latest_entry}")
             else:
-                self.df = pd.DataFrame(columns=[
-                    'username', 'content_type', 'title', 'content', 'subreddit',
-                    'url', 'score', 'created_utc', 'id', 'timestamp_logged'
-                ])
-                logger.info("No existing data file, created empty DataFrame")
+                self.data = []
+                logger.info("No existing data file, created empty list for data")
         except Exception as e:
             logger.error(f"Error loading existing data: {e}")
-            self.df = pd.DataFrame(columns=[
-                'username', 'content_type', 'title', 'content', 'subreddit',
-                'url', 'score', 'created_utc', 'id', 'timestamp_logged'
-            ])
+            self.data = []
 
     def save_data_with_retry(self, max_retries=3):
         """Save data to CSV with retry logic for permission errors"""
+        if not self.data:
+            return True
+            
         for attempt in range(max_retries):
             try:
-                self.df.to_csv(self.data_file, index=False)
+                with open(self.data_file, 'w', newline='', encoding='utf-8') as f:
+                    writer = csv.DictWriter(f, fieldnames=self.data[0].keys())
+                    writer.writeheader()
+                    writer.writerows(self.data)
                 logger.info(f"Successfully saved data to {self.data_file}")
                 return True
             except PermissionError as e:
@@ -207,14 +212,11 @@ class RedditUserTracker:
                     privacy_note = f"\n⚠️ Privacy Mode Detected: {reason}\n   Using hybrid search method for better coverage"
                 
                 if initial_content:
-                    new_df = pd.DataFrame(initial_content)
-                    self.df = pd.concat([self.df, new_df], ignore_index=True)
+                    self.data.extend(initial_content)
                     self.save_data_with_retry()
                     logger.info(f"SILENTLY initialized {username} with {len(initial_content)} existing items")
                     
-                    content_types = {}
-                    for item in initial_content:
-                        content_types[item['content_type']] = content_types.get(item['content_type'], 0) + 1
+                    content_types = Counter(item['content_type'] for item in initial_content)
                     
                     return f"Added user: {username}{privacy_note}\nInitialized with {len(initial_content)} recent items ({dict(content_types)})\nWill now track NEW content only"
                 else:
@@ -255,11 +257,8 @@ class RedditUserTracker:
     def reset_all_data(self):
         """Reset all stored data"""
         try:
-            # Clear the dataframe
-            self.df = pd.DataFrame(columns=[
-                'username', 'content_type', 'title', 'content', 'subreddit',
-                'url', 'score', 'created_utc', 'id', 'timestamp_logged'
-            ])
+            # Clear the data
+            self.data = []
             
             # Remove existing files
             if os.path.exists(self.data_file):
@@ -509,16 +508,13 @@ class RedditUserTracker:
                 
                 for item in content:
                     # Check if we already have this content
-                    existing = self.df[
-                        (self.df['username'] == username) & 
-                        (self.df['id'] == item['id'])
-                    ]
+                    existing = any(row['id'] == item['id'] and row['username'] == username for row in self.data)
                     
                     # Only notify about content created AFTER the user was added
                     user_add_time = self.user_add_timestamps.get(username, 0)
                     content_created_time = item['created_utc']
                     
-                    if existing.empty:
+                    if not existing:
                         # This content is not in our database yet
                         if content_created_time > user_add_time:
                             # This is genuinely NEW content (created after user was added)
@@ -536,22 +532,17 @@ class RedditUserTracker:
             # Add silent entries to database without notifications
             if silent_entries:
                 logger.info(f"Adding {len(silent_entries)} old entries to database silently")
-                silent_df = pd.DataFrame(silent_entries)
-                self.df = pd.concat([self.df, silent_df], ignore_index=True)
+                self.data.extend(silent_entries)
             
             if new_entries:
                 logger.info(f"Found {len(new_entries)} NEW entries total!")
                 
                 # Show breakdown
-                breakdown = {}
-                for entry in new_entries:
-                    key = f"{entry['username']} ({entry['content_type']})"
-                    breakdown[key] = breakdown.get(key, 0) + 1
-                logger.info(f"New content breakdown: {breakdown}")
+                breakdown = Counter(f"{entry['username']} ({entry['content_type']})" for entry in new_entries)
+                logger.info(f"New content breakdown: {dict(breakdown)}")
                 
-                # Add to dataframe
-                new_df = pd.DataFrame(new_entries)
-                self.df = pd.concat([self.df, new_df], ignore_index=True)
+                # Add to data
+                self.data.extend(new_entries)
                 
                 # Save to CSV
                 self.save_data_with_retry()
@@ -799,26 +790,26 @@ Auto-checks happen every minute with improved message delivery."""
 Tracked Users: {len(self.tracker.tracked_users)}
 {chr(10).join(f"  - {user}" for user in sorted(self.tracker.tracked_users))}
 
-Total Data Entries: {len(self.tracker.df)}
+Total Data Entries: {len(self.tracker.data)}
 Pending Messages: {len(self.pending_messages)}
 
 Data Breakdown by User:"""
             
-            if len(self.tracker.df) > 0:
-                user_stats = self.tracker.df['username'].value_counts()
+            if len(self.tracker.data) > 0:
+                user_stats = Counter(row['username'] for row in self.tracker.data)
                 for username, count in user_stats.items():
                     debug_info += f"\n  - {username}: {count} items"
                 
                 debug_info += f"\n\nContent Type Breakdown:"
-                type_stats = self.tracker.df['content_type'].value_counts()
+                type_stats = Counter(row['content_type'] for row in self.tracker.data)
                 for content_type, count in type_stats.items():
                     debug_info += f"\n  - {content_type}: {count}"
                 
                 # Show most recent entries
-                latest_entries = self.tracker.df.nlargest(3, 'created_utc')[['username', 'content_type', 'created_utc']]
+                latest_entries = heapq.nlargest(3, self.tracker.data, key=lambda x: float(x['created_utc']))
                 debug_info += f"\n\nMost Recent Entries:"
-                for _, row in latest_entries.iterrows():
-                    timestamp = datetime.fromtimestamp(row['created_utc']).strftime('%Y-%m-%d %H:%M:%S')
+                for row in latest_entries:
+                    timestamp = datetime.fromtimestamp(float(row['created_utc'])).strftime('%Y-%m-%d %H:%M:%S')
                     debug_info += f"\n  - {row['username']} ({row['content_type']}) - {timestamp}"
             else:
                 debug_info += "\n  No data entries found"
@@ -880,7 +871,7 @@ def health_check():
         "status": "running",
         "tracked_users": len(tracker.tracked_users) if tracker else 0,
         "message": "Reddit Tracker is running",
-        "data_entries": len(tracker.df) if tracker else 0
+        "data_entries": len(tracker.data) if tracker else 0
     })
 
 @app.route('/health')
@@ -894,7 +885,7 @@ def status():
     
     return jsonify({
         "tracked_users": list(tracker.tracked_users),
-        "total_entries": len(tracker.df),
+        "total_entries": len(tracker.data),
         "data_file_exists": os.path.exists(tracker.data_file),
         "users_file_exists": os.path.exists(tracker.users_file),
         "last_check": "Running continuously"
@@ -922,7 +913,7 @@ def backup_data():
         data = {
             "tracked_users": list(tracker.tracked_users),
             "user_add_timestamps": tracker.user_add_timestamps,
-            "data_entries": len(tracker.df),
+            "data_entries": len(tracker.data),
             "backup_timestamp": datetime.now().isoformat()
         }
         return jsonify(data)
@@ -1012,7 +1003,7 @@ def main():
     logger.info("Starting scheduler thread...")
     scheduler_thread = threading.Thread(
         target=run_scheduler, 
-        args=(tracker, telegram_bot, shutdown_event), 
+        args=(tracker, telegram_bot, shutdown_event),
         daemon=True
     )
     scheduler_thread.start()
@@ -1027,7 +1018,7 @@ def main():
     
     logger.info("Starting Flask web server...")
     logger.info(f"Tracked users on startup: {list(tracker.tracked_users)}")
-    logger.info(f"Data entries on startup: {len(tracker.df)}")
+    logger.info(f"Data entries on startup: {len(tracker.data)}")
     
     # Get port from environment (Render provides this)
     port = int(os.environ.get('PORT', 5000))
