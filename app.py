@@ -860,9 +860,20 @@ Fixed: Telegram message delivery issues"""
         await update.message.reply_text(message)
     
     def start_bot(self):
-        """Start the Telegram bot"""
+        """Start the Telegram bot with proper async handling"""
         logger.info("Starting Telegram bot...")
-        self.application.run_polling()
+        
+        # Create new event loop for this thread
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
+        try:
+            # Run the bot using the event loop
+            loop.run_until_complete(self.application.run_polling())
+        except Exception as e:
+            logger.error(f"Error running Telegram bot: {e}")
+        finally:
+            loop.close()
 
 # Flask routes for monitoring
 @app.route('/')
