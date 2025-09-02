@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: reddit-tracker
+    env: python
+    pythonVersion: "3.11"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    plan: starter
+    disk:
+      name: reddit-tracker-persistent
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: REDDIT_CLIENT_ID
+        sync: false
+      - key: REDDIT_CLIENT_SECRET
+        sync: false
+      - key: REDDIT_USER_AGENT
+        value: RedditTracker/1.0
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      # Add these for better build visibility
+      - key: PIP_VERBOSE
+        value: "1"
+      - key: PIP_NO_CACHE_DIR
+        value: "1"

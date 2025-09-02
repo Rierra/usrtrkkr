@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit User Tracker</title>
+</head>
+<body>
+    <h1>Reddit User Tracker</h1>
+    <form action="/" method="post">
+        <label for="username">Enter Reddit Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Track User</button>
+    </form>
+
+    {% if user_data %}
+        <h2>{{ user_data.name }}'s Profile</h2>
+        <p>Karma: {{ user_data.karma }}</p>
+        <h3>Recent Comments:</h3>
+        <ul>
+            {% for comment in user_data.comments %}
+                <li>{{ comment }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Recent Submissions:</h3>
+        <ul>
+            {% for submission in user_data.submissions %}
+                <li>{{ submission }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
