@@ -1046,16 +1046,16 @@ def main():
     )
     scheduler_thread.start()
     
-# Start Telegram bot in a separate thread with proper async handling
-logger.info("Starting Telegram bot thread...")
-def run_telegram_bot():
-    telegram_bot.start_bot()
-
-bot_thread = threading.Thread(
-    target=run_telegram_bot,
-    daemon=True
-)
-bot_thread.start()
+    # Start Telegram bot in a separate thread with proper async handling
+    logger.info("Starting Telegram bot thread...")
+    def run_telegram_bot():
+        telegram_bot.start_bot()
+    
+    bot_thread = threading.Thread(
+        target=run_telegram_bot,
+        daemon=True
+    )
+    bot_thread.start()
     
     logger.info("Starting Flask web server...")
     logger.info(f"Tracked users on startup: {list(tracker.tracked_users)}")
