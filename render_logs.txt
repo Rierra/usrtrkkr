@@ -1,6 +1,5 @@
-info
 ==> Cloning from https://github.com/Rierra/usrtrkkr
-==> Checking out commit 70f646e9560d7c8aa61be2cbdc912e410d259f86 in branch main
+==> Checking out commit 0a4600605d9b87f9e36bad37b7534ff9ec9db8e4 in branch main
 ==> Using Python version 3.13.4 (default)
 ==> Docs on specifying a Python version: https://render.com/docs/python-version
 ==> Using Poetry version 2.1.3 (default)
@@ -64,7 +63,7 @@ Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==2.3.3->-r requirements.tx
   Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
 Downloading praw-7.7.1-py3-none-any.whl (191 kB)
 Downloading python_telegram_bot-20.7-py3-none-any.whl (552 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.6/552.6 kB 28.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.6/552.6 kB 23.1 MB/s eta 0:00:00
 Downloading schedule-1.2.0-py2.py3-none-any.whl (11 kB)
 Downloading python_dotenv-1.0.0-py3-none-any.whl (19 kB)
 Downloading requests-2.31.0-py3-none-any.whl (62 kB)
@@ -78,7 +77,7 @@ Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
 Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
 Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
 Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 70.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 63.3 MB/s eta 0:00:00
 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
 Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
 Downloading click-8.2.1-py3-none-any.whl (102 kB)
@@ -101,31 +100,31 @@ Successfully installed Flask-2.3.3 Jinja2-3.1.6 MarkupSafe-3.0.2 Werkzeug-3.1.3 
 ==> Build successful 🎉
 ==> Deploying...
 ==> Running 'python app.py'
-2025-09-02 06:27:40,484 - INFO - main:995 - Initializing Reddit tracker...
-2025-09-02 06:27:40,484 - INFO - __init__:56 - Initializing RedditUserTracker...
-2025-09-02 06:27:40,484 - INFO - main:995 - Initializing Reddit tracker...
-2025-09-02 06:27:40,484 - INFO - __init__:56 - Initializing RedditUserTracker...
+2025-09-02 06:34:03,219 - INFO - main:995 - Initializing Reddit tracker...
+2025-09-02 06:34:03,219 - INFO - main:995 - Initializing Reddit tracker...
+2025-09-02 06:34:03,219 - INFO - __init__:56 - Initializing RedditUserTracker...
+2025-09-02 06:34:03,219 - INFO - __init__:56 - Initializing RedditUserTracker...
 Version 7.7.1 of praw is outdated. Version 7.8.1 was released Friday October 25, 2024.
-2025-09-02 06:27:40,610 - INFO - __init__:64 - Reddit API initialized successfully
-2025-09-02 06:27:40,610 - INFO - __init__:64 - Reddit API initialized successfully
-2025-09-02 06:27:40,610 - INFO - __init__:69 - Using /data directory for persistent storage
-2025-09-02 06:27:40,610 - INFO - __init__:69 - Using /data directory for persistent storage
-2025-09-02 06:27:40,675 - INFO - __init__:77 - Telegram bot initialized
-2025-09-02 06:27:40,675 - INFO - __init__:77 - Telegram bot initialized
-2025-09-02 06:27:40,675 - INFO - __init__:87 - Data files will be stored in: /data
-2025-09-02 06:27:40,675 - INFO - __init__:87 - Data files will be stored in: /data
-2025-09-02 06:27:40,675 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
-2025-09-02 06:27:40,675 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
-2025-09-02 06:27:40,675 - INFO - __init__:89 - Users file: /data/tracked_users.json
-2025-09-02 06:27:40,675 - INFO - __init__:89 - Users file: /data/tracked_users.json
-2025-09-02 06:27:40,675 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
-2025-09-02 06:27:40,675 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
-2025-09-02 06:27:40,675 - INFO - load_existing_data:144 - No existing data file, created empty list for data
-2025-09-02 06:27:40,675 - INFO - load_existing_data:144 - No existing data file, created empty list for data
-2025-09-02 06:27:40,675 - INFO - __init__:95 - RedditUserTracker initialization complete
-2025-09-02 06:27:40,675 - INFO - __init__:95 - RedditUserTracker initialization complete
-2025-09-02 06:27:40,675 - INFO - main:999 - Initializing Telegram bot...
-2025-09-02 06:27:40,675 - INFO - main:999 - Initializing Telegram bot...
+2025-09-02 06:34:03,344 - INFO - __init__:64 - Reddit API initialized successfully
+2025-09-02 06:34:03,344 - INFO - __init__:64 - Reddit API initialized successfully
+2025-09-02 06:34:03,344 - INFO - __init__:69 - Using /data directory for persistent storage
+2025-09-02 06:34:03,344 - INFO - __init__:69 - Using /data directory for persistent storage
+2025-09-02 06:34:03,418 - INFO - __init__:77 - Telegram bot initialized
+2025-09-02 06:34:03,419 - INFO - __init__:87 - Data files will be stored in: /data
+2025-09-02 06:34:03,418 - INFO - __init__:77 - Telegram bot initialized
+2025-09-02 06:34:03,419 - INFO - __init__:87 - Data files will be stored in: /data
+2025-09-02 06:34:03,419 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
+2025-09-02 06:34:03,419 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
+2025-09-02 06:34:03,419 - INFO - __init__:89 - Users file: /data/tracked_users.json
+2025-09-02 06:34:03,419 - INFO - __init__:89 - Users file: /data/tracked_users.json
+2025-09-02 06:34:03,420 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
+2025-09-02 06:34:03,420 - INFO - load_existing_data:144 - No existing data file, created empty list for data
+2025-09-02 06:34:03,420 - INFO - __init__:95 - RedditUserTracker initialization complete
+2025-09-02 06:34:03,420 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
+2025-09-02 06:34:03,420 - INFO - load_existing_data:144 - No existing data file, created empty list for data
+2025-09-02 06:34:03,420 - INFO - __init__:95 - RedditUserTracker initialization complete
+2025-09-02 06:34:03,420 - INFO - main:999 - Initializing Telegram bot...
+2025-09-02 06:34:03,420 - INFO - main:999 - Initializing Telegram bot...
 Traceback (most recent call last):
   File "/opt/render/project/src/app.py", line 1034, in <module>
     main()
@@ -141,40 +140,40 @@ Traceback (most recent call last):
     self.__polling_cleanup_cb: Optional[Callable[[], Coroutine[Any, Any, None]]] = None
     ^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Updater' object has no attribute '_Updater__polling_cleanup_cb' and no __dict__ for setting new attributes
-2025-09-02 06:27:40,780 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
-2025-09-02 06:27:40,780 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
-2025-09-02 06:27:40,781 - INFO - save_tracked_users:124 - Saved tracked users: []
-2025-09-02 06:27:40,781 - INFO - save_tracked_users:124 - Saved tracked users: []
-2025-09-02 06:27:40,781 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
-2025-09-02 06:27:40,781 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
+2025-09-02 06:34:03,535 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
+2025-09-02 06:34:03,535 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
+2025-09-02 06:34:03,535 - INFO - save_tracked_users:124 - Saved tracked users: []
+2025-09-02 06:34:03,535 - INFO - save_tracked_users:124 - Saved tracked users: []
+2025-09-02 06:34:03,535 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
+2025-09-02 06:34:03,535 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
 ==> Exited with status 1
 ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
 ==> Running 'python app.py'
-2025-09-02 06:27:46,231 - INFO - main:995 - Initializing Reddit tracker...
-2025-09-02 06:27:46,231 - INFO - main:995 - Initializing Reddit tracker...
-2025-09-02 06:27:46,232 - INFO - __init__:56 - Initializing RedditUserTracker...
-2025-09-02 06:27:46,232 - INFO - __init__:56 - Initializing RedditUserTracker...
+2025-09-02 06:34:09,432 - INFO - main:995 - Initializing Reddit tracker...
+2025-09-02 06:34:09,432 - INFO - main:995 - Initializing Reddit tracker...
+2025-09-02 06:34:09,432 - INFO - __init__:56 - Initializing RedditUserTracker...
+2025-09-02 06:34:09,432 - INFO - __init__:56 - Initializing RedditUserTracker...
 Version 7.7.1 of praw is outdated. Version 7.8.1 was released Friday October 25, 2024.
-2025-09-02 06:27:46,233 - INFO - __init__:64 - Reddit API initialized successfully
-2025-09-02 06:27:46,233 - INFO - __init__:64 - Reddit API initialized successfully
-2025-09-02 06:27:46,233 - INFO - __init__:69 - Using /data directory for persistent storage
-2025-09-02 06:27:46,233 - INFO - __init__:69 - Using /data directory for persistent storage
-2025-09-02 06:27:46,338 - INFO - __init__:77 - Telegram bot initialized
-2025-09-02 06:27:46,338 - INFO - __init__:77 - Telegram bot initialized
-2025-09-02 06:27:46,339 - INFO - __init__:87 - Data files will be stored in: /data
-2025-09-02 06:27:46,339 - INFO - __init__:87 - Data files will be stored in: /data
-2025-09-02 06:27:46,339 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
-2025-09-02 06:27:46,339 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
-2025-09-02 06:27:46,339 - INFO - __init__:89 - Users file: /data/tracked_users.json
-2025-09-02 06:27:46,339 - INFO - __init__:89 - Users file: /data/tracked_users.json
-2025-09-02 06:27:46,339 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
-2025-09-02 06:27:46,339 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
-2025-09-02 06:27:46,339 - INFO - load_existing_data:144 - No existing data file, created empty list for data
-2025-09-02 06:27:46,339 - INFO - load_existing_data:144 - No existing data file, created empty list for data
-2025-09-02 06:27:46,339 - INFO - __init__:95 - RedditUserTracker initialization complete
-2025-09-02 06:27:46,339 - INFO - __init__:95 - RedditUserTracker initialization complete
-2025-09-02 06:27:46,339 - INFO - main:999 - Initializing Telegram bot...
-2025-09-02 06:27:46,339 - INFO - main:999 - Initializing Telegram bot...
+2025-09-02 06:34:09,433 - INFO - __init__:64 - Reddit API initialized successfully
+2025-09-02 06:34:09,433 - INFO - __init__:64 - Reddit API initialized successfully
+2025-09-02 06:34:09,433 - INFO - __init__:69 - Using /data directory for persistent storage
+2025-09-02 06:34:09,433 - INFO - __init__:69 - Using /data directory for persistent storage
+2025-09-02 06:34:09,536 - INFO - __init__:77 - Telegram bot initialized
+2025-09-02 06:34:09,536 - INFO - __init__:77 - Telegram bot initialized
+2025-09-02 06:34:09,537 - INFO - __init__:87 - Data files will be stored in: /data
+2025-09-02 06:34:09,537 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
+2025-09-02 06:34:09,537 - INFO - __init__:89 - Users file: /data/tracked_users.json
+2025-09-02 06:34:09,537 - INFO - __init__:87 - Data files will be stored in: /data
+2025-09-02 06:34:09,537 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
+2025-09-02 06:34:09,537 - INFO - __init__:89 - Users file: /data/tracked_users.json
+2025-09-02 06:34:09,537 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
+2025-09-02 06:34:09,537 - INFO - load_existing_data:144 - No existing data file, created empty list for data
+2025-09-02 06:34:09,537 - INFO - load_tracked_users:110 - Loaded 0 tracked users: []
+2025-09-02 06:34:09,537 - INFO - load_existing_data:144 - No existing data file, created empty list for data
+2025-09-02 06:34:09,537 - INFO - __init__:95 - RedditUserTracker initialization complete
+2025-09-02 06:34:09,537 - INFO - __init__:95 - RedditUserTracker initialization complete
+2025-09-02 06:34:09,537 - INFO - main:999 - Initializing Telegram bot...
+2025-09-02 06:34:09,537 - INFO - main:999 - Initializing Telegram bot...
 Traceback (most recent call last):
   File "/opt/render/project/src/app.py", line 1034, in <module>
     main()
@@ -185,14 +184,14 @@ Traceback (most recent call last):
     self.application = Application.builder().token(telegram_token).build()
                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/telegram/ext/_applicationbuilder.py", line 312, in build
-2025-09-02 06:27:46,511 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
     updater = Updater(bot=bot, update_queue=update_queue)
   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 128, in __init__
     self.__polling_cleanup_cb: Optional[Callable[[], Coroutine[Any, Any, None]]] = None
     ^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Updater' object has no attribute '_Updater__polling_cleanup_cb' and no __dict__ for setting new attributes
-2025-09-02 06:27:46,511 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
-2025-09-02 06:27:46,512 - INFO - save_tracked_users:124 - Saved tracked users: []
-2025-09-02 06:27:46,512 - INFO - save_tracked_users:124 - Saved tracked users: []
-2025-09-02 06:27:46,512 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
-2025-09-02 06:27:46,512 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
+2025-09-02 06:34:09,648 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
+2025-09-02 06:34:09,648 - INFO - cleanup_on_shutdown:951 - Shutting down gracefully...
+2025-09-02 06:34:09,648 - INFO - save_tracked_users:124 - Saved tracked users: []
+2025-09-02 06:34:09,648 - INFO - save_tracked_users:124 - Saved tracked users: []
+2025-09-02 06:34:09,648 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
+2025-09-02 06:34:09,648 - INFO - cleanup_on_shutdown:958 - Data saved before shutdown
