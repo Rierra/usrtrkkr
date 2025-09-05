@@ -1,0 +1,150 @@
+2025-09-05 11:36:40,827 - INFO - check_for_new_content:503 - Checking user: rierrium
+2025-09-05 11:36:40,827 - INFO - check_for_new_content:503 - Checking user: rierrium
+2025-09-05 11:36:40,827 - INFO - get_user_content:281 - Fetching content for user: rierrium (limit: 25, init: False)
+2025-09-05 11:36:40,827 - INFO - get_user_content:281 - Fetching content for user: rierrium (limit: 25, init: False)
+2025-09-05 11:36:40,827 - INFO - get_user_content:288 - Phase 1: Trying profile method for rierrium
+2025-09-05 11:36:40,827 - INFO - get_user_content:288 - Phase 1: Trying profile method for rierrium
+2025-09-05 11:36:41,443 - INFO - get_user_content:306 - Profile method found 25 posts for rierrium
+2025-09-05 11:36:41,443 - INFO - get_user_content:306 - Profile method found 25 posts for rierrium
+2025-09-05 11:37:01,425 - INFO - get_user_content:334 - Profile method found 25 comments for rierrium
+2025-09-05 11:37:01,425 - INFO - get_user_content:334 - Profile method found 25 comments for rierrium
+2025-09-05 11:37:01,425 - INFO - get_user_content:423 - Final results for rierrium: 50 items total (25 posts, 25 comments)
+2025-09-05 11:37:01,426 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-05 11:36:01', '2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45']
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:507 - Retrieved 25 items for rierrium
+2025-09-05 11:37:01,425 - INFO - get_user_content:423 - Final results for rierrium: 50 items total (25 posts, 25 comments)
+2025-09-05 11:37:01,426 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-05 11:36:01', '2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45']
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:507 - Retrieved 25 items for rierrium
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:521 - NEW comment found for rierrium: ncjf2xi - Comment on: You hear that? r/GTBAE has a pulse aga...
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:521 - NEW comment found for rierrium: ncjf2xi - Comment on: You hear that? r/GTBAE has a pulse aga...
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:522 -    Created: 2025-09-05 11:36:01 UTC (after user was added)
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:522 -    Created: 2025-09-05 11:36:01 UTC (after user was added)
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:523 -    Score: 1, Subreddit: r/GTBAE
+2025-09-05 11:37:01,426 - INFO - check_for_new_content:523 -    Score: 1, Subreddit: r/GTBAE
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbixtn0 (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbixtn0 (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbior86 (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbgn0ru (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbior86 (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfxg3y (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbgn0ru (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfxg3y (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfx1uk (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfx1uk (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbckfoa (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbckfoa (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbbsy0b (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbbsy0b (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nba5zry (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nba5zry (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb6qhxd (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb6qhxd (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb4k36e (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb4k36e (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rvlo (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rvlo (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rf6t (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rf6t (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nwqy (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nwqy (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,431 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nvnk (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,431 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nvnk (created before user was added) - adding to DB silently
+2025-09-05 11:37:01,431 - INFO - check_for_new_content:503 - Checking user: fuddam
+2025-09-05 11:37:01,431 - INFO - check_for_new_content:503 - Checking user: fuddam
+2025-09-05 11:37:01,431 - INFO - get_user_content:281 - Fetching content for user: fuddam (limit: 25, init: False)
+2025-09-05 11:37:01,431 - INFO - get_user_content:288 - Phase 1: Trying profile method for fuddam
+2025-09-05 11:37:01,431 - INFO - get_user_content:281 - Fetching content for user: fuddam (limit: 25, init: False)
+2025-09-05 11:37:01,431 - INFO - get_user_content:288 - Phase 1: Trying profile method for fuddam
+2025-09-05 11:37:01,783 - INFO - get_user_content:306 - Profile method found 10 posts for fuddam
+2025-09-05 11:37:01,783 - INFO - get_user_content:306 - Profile method found 10 posts for fuddam
+2025-09-05 11:37:16,102 - INFO - get_user_content:334 - Profile method found 25 comments for fuddam
+2025-09-05 11:37:16,102 - INFO - get_user_content:334 - Profile method found 25 comments for fuddam
+2025-09-05 11:37:16,103 - INFO - get_user_content:423 - Final results for fuddam: 35 items total (10 posts, 25 comments)
+2025-09-05 11:37:16,103 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-06-22 16:19:12', '2025-06-20 19:46:48', '2025-06-20 19:41:27', '2025-06-20 19:33:17', '2025-06-20 19:29:09']
+2025-09-05 11:37:16,103 - INFO - get_user_content:423 - Final results for fuddam: 35 items total (10 posts, 25 comments)
+2025-09-05 11:37:16,103 - INFO - check_for_new_content:507 - Retrieved 25 items for fuddam
+2025-09-05 11:37:16,103 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-06-22 16:19:12', '2025-06-20 19:46:48', '2025-06-20 19:41:27', '2025-06-20 19:33:17', '2025-06-20 19:29:09']
+2025-09-05 11:37:16,103 - INFO - check_for_new_content:507 - Retrieved 25 items for fuddam
+2025-09-05 11:37:16,104 - INFO - check_for_new_content:503 - Checking user: give_me_the_tech
+2025-09-05 11:37:16,104 - INFO - check_for_new_content:503 - Checking user: give_me_the_tech
+2025-09-05 11:37:16,104 - INFO - get_user_content:281 - Fetching content for user: give_me_the_tech (limit: 25, init: False)
+2025-09-05 11:37:16,104 - INFO - get_user_content:281 - Fetching content for user: give_me_the_tech (limit: 25, init: False)
+2025-09-05 11:37:16,104 - INFO - get_user_content:288 - Phase 1: Trying profile method for give_me_the_tech
+2025-09-05 11:37:16,104 - INFO - get_user_content:288 - Phase 1: Trying profile method for give_me_the_tech
+2025-09-05 11:37:16,550 - INFO - get_user_content:306 - Profile method found 24 posts for give_me_the_tech
+2025-09-05 11:37:16,550 - INFO - get_user_content:306 - Profile method found 24 posts for give_me_the_tech
+2025-09-05 11:37:30,294 - INFO - get_user_content:334 - Profile method found 25 comments for give_me_the_tech
+2025-09-05 11:37:30,294 - INFO - get_user_content:334 - Profile method found 25 comments for give_me_the_tech
+2025-09-05 11:37:30,294 - INFO - get_user_content:423 - Final results for give_me_the_tech: 49 items total (24 posts, 25 comments)
+2025-09-05 11:37:30,294 - INFO - get_user_content:423 - Final results for give_me_the_tech: 49 items total (24 posts, 25 comments)
+2025-09-05 11:37:30,295 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 23:39:04', '2025-09-03 23:38:47', '2025-09-03 19:35:46', '2025-09-01 07:06:25', '2025-08-30 15:21:03']
+2025-09-05 11:37:30,295 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 23:39:04', '2025-09-03 23:38:47', '2025-09-03 19:35:46', '2025-09-01 07:06:25', '2025-08-30 15:21:03']
+2025-09-05 11:37:30,295 - INFO - check_for_new_content:507 - Retrieved 25 items for give_me_the_tech
+2025-09-05 11:37:30,295 - INFO - check_for_new_content:507 - Retrieved 25 items for give_me_the_tech
+2025-09-05 11:37:30,296 - INFO - check_for_new_content:503 - Checking user: livod572
+2025-09-05 11:37:30,296 - INFO - check_for_new_content:503 - Checking user: livod572
+2025-09-05 11:37:30,296 - INFO - get_user_content:281 - Fetching content for user: livod572 (limit: 25, init: False)
+2025-09-05 11:37:30,296 - INFO - get_user_content:281 - Fetching content for user: livod572 (limit: 25, init: False)
+2025-09-05 11:37:30,296 - INFO - get_user_content:288 - Phase 1: Trying profile method for livod572
+2025-09-05 11:37:30,296 - INFO - get_user_content:288 - Phase 1: Trying profile method for livod572
+2025-09-05 11:37:30,481 - INFO - get_user_content:306 - Profile method found 1 posts for livod572
+2025-09-05 11:37:30,481 - INFO - get_user_content:306 - Profile method found 1 posts for livod572
+2025-09-05 11:37:37,506 - INFO - get_user_content:334 - Profile method found 9 comments for livod572
+2025-09-05 11:37:37,506 - INFO - get_user_content:334 - Profile method found 9 comments for livod572
+2025-09-05 11:37:37,506 - INFO - get_user_content:423 - Final results for livod572: 10 items total (1 posts, 9 comments)
+2025-09-05 11:37:37,506 - INFO - get_user_content:423 - Final results for livod572: 10 items total (1 posts, 9 comments)
+2025-09-05 11:37:37,507 - INFO - get_user_content:433 - Most recent content timestamps: ['2024-12-13 07:23:15', '2022-03-04 13:00:05', '2022-02-23 06:01:17', '2021-10-03 16:52:56', '2021-08-20 12:48:18']
+2025-09-05 11:37:37,507 - INFO - check_for_new_content:507 - Retrieved 10 items for livod572
+2025-09-05 11:37:37,507 - INFO - check_for_new_content:503 - Checking user: accomplished4363
+2025-09-05 11:37:37,507 - INFO - get_user_content:281 - Fetching content for user: accomplished4363 (limit: 25, init: False)
+2025-09-05 11:37:37,508 - INFO - get_user_content:288 - Phase 1: Trying profile method for accomplished4363
+2025-09-05 11:37:37,507 - INFO - get_user_content:433 - Most recent content timestamps: ['2024-12-13 07:23:15', '2022-03-04 13:00:05', '2022-02-23 06:01:17', '2021-10-03 16:52:56', '2021-08-20 12:48:18']
+2025-09-05 11:37:37,507 - INFO - check_for_new_content:507 - Retrieved 10 items for livod572
+2025-09-05 11:37:37,507 - INFO - check_for_new_content:503 - Checking user: accomplished4363
+2025-09-05 11:37:37,507 - INFO - get_user_content:281 - Fetching content for user: accomplished4363 (limit: 25, init: False)
+2025-09-05 11:37:37,508 - INFO - get_user_content:288 - Phase 1: Trying profile method for accomplished4363
+2025-09-05 11:37:37,704 - INFO - get_user_content:306 - Profile method found 3 posts for accomplished4363
+2025-09-05 11:37:37,704 - INFO - get_user_content:306 - Profile method found 3 posts for accomplished4363
+2025-09-05 11:37:48,920 - INFO - get_user_content:334 - Profile method found 25 comments for accomplished4363
+2025-09-05 11:37:48,920 - INFO - get_user_content:423 - Final results for accomplished4363: 28 items total (3 posts, 25 comments)
+2025-09-05 11:37:48,920 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 15:02:51', '2025-09-02 04:44:36', '2025-08-24 16:40:46', '2025-08-17 08:57:27', '2025-08-17 08:53:49']
+2025-09-05 11:37:48,920 - INFO - check_for_new_content:507 - Retrieved 25 items for accomplished4363
+2025-09-05 11:37:48,920 - INFO - get_user_content:334 - Profile method found 25 comments for accomplished4363
+2025-09-05 11:37:48,920 - INFO - get_user_content:423 - Final results for accomplished4363: 28 items total (3 posts, 25 comments)
+2025-09-05 11:37:48,920 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 15:02:51', '2025-09-02 04:44:36', '2025-08-24 16:40:46', '2025-08-17 08:57:27', '2025-08-17 08:53:49']
+2025-09-05 11:37:48,920 - INFO - check_for_new_content:507 - Retrieved 25 items for accomplished4363
+2025-09-05 11:37:48,971 - INFO - check_for_new_content:503 - Checking user: affectionate_box4185
+2025-09-05 11:37:48,971 - INFO - check_for_new_content:503 - Checking user: affectionate_box4185
+2025-09-05 11:37:48,971 - INFO - get_user_content:281 - Fetching content for user: affectionate_box4185 (limit: 25, init: False)
+2025-09-05 11:37:48,971 - INFO - get_user_content:281 - Fetching content for user: affectionate_box4185 (limit: 25, init: False)
+2025-09-05 11:37:48,971 - INFO - get_user_content:288 - Phase 1: Trying profile method for affectionate_box4185
+2025-09-05 11:37:48,971 - INFO - get_user_content:288 - Phase 1: Trying profile method for affectionate_box4185
+2025-09-05 11:37:49,167 - INFO - get_user_content:306 - Profile method found 3 posts for affectionate_box4185
+2025-09-05 11:37:49,167 - INFO - get_user_content:306 - Profile method found 3 posts for affectionate_box4185
+2025-09-05 11:37:56,063 - INFO - get_user_content:334 - Profile method found 25 comments for affectionate_box4185
+2025-09-05 11:37:56,063 - INFO - get_user_content:334 - Profile method found 25 comments for affectionate_box4185
+2025-09-05 11:37:56,064 - INFO - get_user_content:423 - Final results for affectionate_box4185: 28 items total (3 posts, 25 comments)
+2025-09-05 11:37:56,064 - INFO - get_user_content:423 - Final results for affectionate_box4185: 28 items total (3 posts, 25 comments)
+2025-09-05 11:37:56,064 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-08-22 12:08:53', '2025-08-14 12:51:42', '2025-08-13 12:01:01', '2025-08-11 10:50:03', '2025-08-08 11:58:47']
+2025-09-05 11:37:56,064 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-08-22 12:08:53', '2025-08-14 12:51:42', '2025-08-13 12:01:01', '2025-08-11 10:50:03', '2025-08-08 11:58:47']
+2025-09-05 11:37:56,064 - INFO - check_for_new_content:507 - Retrieved 25 items for affectionate_box4185
+2025-09-05 11:37:56,064 - INFO - check_for_new_content:507 - Retrieved 25 items for affectionate_box4185
+2025-09-05 11:37:56,066 - INFO - check_for_new_content:534 - Adding 14 old entries to database silently
+2025-09-05 11:37:56,066 - INFO - check_for_new_content:534 - Adding 14 old entries to database silently
+2025-09-05 11:37:56,066 - INFO - check_for_new_content:538 - Found 1 NEW entries total!
+2025-09-05 11:37:56,066 - INFO - check_for_new_content:538 - Found 1 NEW entries total!
+2025-09-05 11:37:56,066 - INFO - check_for_new_content:542 - New content breakdown: {'rierrium (comment)': 1}
+2025-09-05 11:37:56,066 - INFO - check_for_new_content:542 - New content breakdown: {'rierrium (comment)': 1}
+2025-09-05 11:37:56,080 - INFO - save_data_with_retry:160 - Successfully saved data to /data/reddit_tracker_data.csv
+2025-09-05 11:37:56,080 - INFO - save_data_with_retry:160 - Successfully saved data to /data/reddit_tracker_data.csv
+2025-09-05 11:37:56,080 - INFO - check_for_new_content:549 - Saved data to /data/reddit_tracker_data.csv
+2025-09-05 11:37:56,080 - INFO - check_for_new_content:549 - Saved data to /data/reddit_tracker_data.csv
+2025-09-05 11:37:57,081 - ERROR - send_telegram_message:649 - Telegram error (attempt 1): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
+2025-09-05 11:37:57,081 - ERROR - send_telegram_message:649 - Telegram error (attempt 1): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
+2025-09-05 11:38:00,085 - ERROR - send_telegram_message:649 - Telegram error (attempt 2): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
+2025-09-05 11:38:00,085 - ERROR - send_telegram_message:649 - Telegram error (attempt 2): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
+2025-09-05 11:38:03,088 - ERROR - send_telegram_message:649 - Telegram error (attempt 3): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
+2025-09-05 11:38:03,088 - ERROR - send_telegram_message:649 - Telegram error (attempt 3): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
+2025-09-05 11:38:03,089 - ERROR - send_telegram_message:657 - Failed to send message after 3 attempts
+2025-09-05 11:38:03,089 - ERROR - send_telegram_message:657 - Failed to send message after 3 attempts
+2025-09-05 11:38:03,089 - ERROR - queue_messages_for_telegram:615 - ✗ Failed to send notification for rierrium (comment)
+2025-09-05 11:38:03,089 - ERROR - queue_messages_for_telegram:615 - ✗ Failed to send notification for rierrium (comment)

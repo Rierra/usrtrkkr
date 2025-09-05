@@ -51,9 +51,10 @@ telegram_bot = None
 shutdown_event = threading.Event()
 
 class RedditUserTracker:
-    def __init__(self, reddit_credentials, telegram_token, telegram_chat_id):
+    def __init__(self, reddit_credentials, telegram_token, telegram_chat_id, telegram_application):
         try:
             logger.info("Initializing RedditUserTracker...")
+            self.telegram_application = telegram_application # Store the application instance
             
             # Initialize Reddit API
             self.reddit = praw.Reddit(
@@ -588,44 +589,27 @@ class RedditUserTracker:
             return f"Error formatting message for {entry.get('username', 'unknown')}: {e}"
   
     def queue_messages_for_telegram(self, new_entries):
-        """Send messages immediately to Telegram"""
+        """Send messages to Telegram by creating tasks on the bot's event loop."""
         try:
+            if not self.telegram_application:
+                logger.error("Telegram application not available in tracker. Cannot send messages.")
+                return
+
+            logger.info(f"Queueing {len(new_entries)} messages for sending via application event loop.")
+            
             for entry in new_entries:
                 message = self.format_telegram_message(entry)
                 
-                # Send message immediately using sync method
-                try:
-                    # Use a more robust async approach
-                    if asyncio.get_running_loop():
-                        # If we're already in an async context, this won't work
-                        logger.warning("Already in async context, cannot send immediately")
-                        return
-                except RuntimeError:
-                    # No running loop, which is what we want
-                    pass
-                
-                try:
-                    loop = asyncio.new_event_loop()
-                    asyncio.set_event_loop(loop)
-                    try:
-                        success = loop.run_until_complete(self.send_telegram_message(message))
-                        if success:
-                            logger.info(f"✓ Successfully sent notification for {entry['username']} ({entry['content_type']})")
-                        else:
-                            logger.error(f"✗ Failed to send notification for {entry['username']} ({entry['content_type']})")
-                    finally:
-                        loop.close()
-                        # Reset to no event loop
-                        asyncio.set_event_loop(None)
-                except Exception as e:
-                    logger.error(f"Error sending Telegram message for {entry['username']}: {e}")
+                # Schedule the send_telegram_message coroutine to run on the application's event loop
+                self.telegram_application.create_task(self.send_telegram_message(message, entry))
             
-            logger.info(f"Attempted to send {len(new_entries)} messages to Telegram")
+            logger.info(f"All {len(new_entries)} messages have been scheduled for sending.")
+            
         except Exception as e:
             logger.error(f"CRITICAL ERROR in queue_messages_for_telegram: {e}")
             logger.error(traceback.format_exc())
     
-    async def send_telegram_message(self, message):
+    async def send_telegram_message(self, message, entry):
         """Send a single message to Telegram with proper error handling"""
         from telegram.error import RetryAfter, TelegramError
         
@@ -638,23 +622,24 @@ class RedditUserTracker:
                     parse_mode='HTML',
                     disable_web_page_preview=True
                 )
+                logger.info(f"✓ Successfully sent notification for {entry['username']} ({entry['content_type']})")
                 return True
                 
             except RetryAfter as e:
                 wait_time = e.retry_after + 1
-                logger.warning(f"Rate limited. Waiting {wait_time} seconds (attempt {attempt + 1})")
+                logger.warning(f"Rate limited on {entry['username']}. Waiting {wait_time}s (attempt {attempt + 1})")
                 await asyncio.sleep(wait_time)
                 
             except TelegramError as e:
-                logger.error(f"Telegram error (attempt {attempt + 1}): {e}")
+                logger.error(f"Telegram error for {entry['username']} (attempt {attempt + 1}): {e}")
                 if attempt < max_retries - 1:
                     await asyncio.sleep(2)
                 
             except Exception as e:
-                logger.error(f"Unexpected error: {e}")
+                logger.error(f"Unexpected error sending for {entry['username']}: {e}")
                 return False
                 
-        logger.error(f"Failed to send message after {max_retries} attempts")
+        logger.error(f"✗ Failed to send message for {entry['username']} ({entry['content_type']}) after {max_retries} attempts")
         return False
 
 class TelegramBot:
@@ -993,11 +978,7 @@ def main():
     
     # Initialize tracker
     logger.info("Initializing Reddit tracker...")
-    tracker = RedditUserTracker(REDDIT_CREDENTIALS, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
-    
-    # Initialize Telegram bot
-    logger.info("Initializing Telegram bot...")
-    telegram_bot = TelegramBot(tracker, TELEGRAM_TOKEN)
+    tracker = RedditUserTracker(REDDIT_CREDENTIALS, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, telegram_bot.application)
     
     # Start scheduler in a separate thread
     logger.info("Starting scheduler thread...")
