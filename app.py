@@ -645,11 +645,12 @@ class RedditUserTracker:
 class TelegramBot:
     def __init__(self, tracker, telegram_token):
         self.tracker = tracker
-        self.application = Application.builder().token(telegram_token).build()
+        self.telegram_token = telegram_token
+        self.application = None
         self.pending_messages = [] 
 
-        
-        # Add handlers
+    def setup_handlers(self):
+        """Setup command handlers"""
         self.application.add_handler(CommandHandler("start", self.start))
         self.application.add_handler(CommandHandler("add", self.add_user))
         self.application.add_handler(CommandHandler("remove", self.remove_user))
@@ -663,7 +664,6 @@ class TelegramBot:
         """Add message to pending queue"""
         self.pending_messages.append(message)
         logger.info(f"Queued message. Total pending: {len(self.pending_messages)}")    
-    
     
     async def send_pending_messages(self):
         """Send all pending messages"""
@@ -845,9 +845,47 @@ Fixed: Telegram message delivery issues"""
         await update.message.reply_text(message)
     
     def start_bot(self):
-        """Start the Telegram bot"""
+        """Start the Telegram bot with proper async handling"""
         logger.info("Starting Telegram bot...")
-        self.application.run_polling()
+        
+        async def run_bot():
+            """Async function to run the bot"""
+            try:
+                # Initialize application inside async context
+                self.application = Application.builder().token(self.telegram_token).build()
+                self.setup_handlers()
+                
+                logger.info("Starting bot polling...")
+                await self.application.initialize()
+                await self.application.start()
+                await self.application.updater.start_polling()
+                
+                # Keep running until shutdown
+                while not shutdown_event.is_set():
+                    await asyncio.sleep(1)
+                    
+            except Exception as e:
+                logger.error(f"Error in bot: {e}")
+                logger.error(traceback.format_exc())
+            finally:
+                if self.application:
+                    try:
+                        await self.application.updater.stop()
+                        await self.application.stop()
+                        await self.application.shutdown()
+                    except Exception as e:
+                        logger.error(f"Error shutting down bot: {e}")
+        
+        # Create new event loop for this thread
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
+        try:
+            loop.run_until_complete(run_bot())
+        except Exception as e:
+            logger.error(f"Error running Telegram bot: {e}")
+        finally:
+            loop.close()
 
 # Flask routes for monitoring
 @app.route('/')
@@ -989,10 +1027,13 @@ def main():
     )
     scheduler_thread.start()
     
-    # Start Telegram bot in a separate thread
+    # Start Telegram bot in a separate thread with proper async handling
     logger.info("Starting Telegram bot thread...")
+    def run_telegram_bot():
+        telegram_bot.start_bot()
+    
     bot_thread = threading.Thread(
-        target=telegram_bot.start_bot,
+        target=run_telegram_bot,
         daemon=True
     )
     bot_thread.start()
