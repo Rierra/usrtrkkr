@@ -648,7 +648,6 @@ class TelegramBot:
     def __init__(self, telegram_token):
         self.tracker = None # Initialize tracker as None
         self.application = Application.builder().token(telegram_token).build()
-        self.pending_messages = [] 
 
         # Add handlers
         self.application.add_handler(CommandHandler("start", self.start))
@@ -668,6 +667,146 @@ class TelegramBot:
         """Start the Telegram bot polling."""
         logger.info("Starting Telegram bot polling...")
         self.application.run_polling()
+
+    async def start(self, update, context):
+        """Start command handler"""
+        message = """Reddit User Tracker Bot (Fixed Version)
+
+I monitor Reddit users and notify you of their new posts and comments!
+
+Quick Start:
+/add username - Start tracking a user
+/list - See who you're tracking  
+/check - Manual check for new content
+/debug - Show debug info
+/help - Full command list
+
+When you add a user, I'll initialize with their recent content and then only notify about NEW stuff!
+
+Auto-checks happen every minute with improved message delivery."""
+        await update.message.reply_text(message)
+    
+    async def add_user(self, update, context):
+        """Add user command handler"""
+        if not context.args:
+            await update.message.reply_text("Please provide a username. Example: /add spez")
+            return
+        
+        username = " ".join(context.args)
+        await update.message.reply_text(f"Adding user {username}...")
+        
+        # Run in thread to avoid blocking
+        import concurrent.futures
+        try:
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                result = await asyncio.get_event_loop().run_in_executor(
+                    executor, self.tracker.add_user, username
+                )
+            await update.message.reply_text(result)
+        except Exception as e:
+            await update.message.reply_text(f"Error adding user: {str(e)}")
+    
+    async def remove_user(self, update, context):
+        """Remove user command handler"""
+        if not context.args:
+            await update.message.reply_text("Please provide a username. Example: /remove spez")
+            return
+        
+        username = " ".join(context.args)
+        result = self.tracker.remove_user(username)
+        await update.message.reply_text(result)
+    
+    async def list_users(self, update, context):
+        """List users command handler"""
+        result = self.tracker.list_users()
+        await update.message.reply_text(result)
+    
+    async def manual_check(self, update, context):
+        """Manual check command handler"""
+        await update.message.reply_text("Checking for new content...")
+        try:
+            import concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                await asyncio.get_event_loop().run_in_executor(
+                    executor, self.tracker.check_for_new_content
+                )
+            await update.message.reply_text("Manual check completed! Check the bot for any new notifications.")
+        except Exception as e:
+            await update.message.reply_text(f"Error during manual check: {str(e)}")
+    
+    async def debug_command(self, update, context):
+        """Show debug information"""
+        try:
+            debug_info = f"""Debug Information
+
+Tracked Users: {len(self.tracker.tracked_users)}
+{chr(10).join(f"  - {user}" for user in sorted(self.tracker.tracked_users))}
+
+Total Data Entries: {len(self.tracker.data)}
+
+Data Breakdown by User:"""
+            
+            if len(self.tracker.data) > 0:
+                user_stats = Counter(row['username'] for row in self.tracker.data)
+                for username, count in user_stats.items():
+                    debug_info += f"\n  - {username}: {count} items"
+                
+                debug_info += f"\n\nContent Type Breakdown:"
+                type_stats = Counter(row['content_type'] for row in self.tracker.data)
+                for content_type, count in type_stats.items():
+                    debug_info += f"\n  - {content_type}: {count}"
+                
+                # Show most recent entries
+                latest_entries = heapq.nlargest(3, self.tracker.data, key=lambda x: float(x['created_utc']))
+                debug_info += f"\n\nMost Recent Entries:"
+                for row in latest_entries:
+                    timestamp = datetime.fromtimestamp(float(row['created_utc'])).strftime('%Y-%m-%d %H:%M:%S')
+                    debug_info += f"\n  - {row['username']} ({row['content_type']}) - {timestamp}"
+            else:
+                debug_info += "\n  No data entries found"
+                
+            await update.message.reply_text(debug_info)
+            
+        except Exception as e:
+            await update.message.reply_text(f"Error getting debug info: {str(e)}")
+    
+    async def reset_data(self, update, context):
+        """Reset all stored data"""
+        try:
+            self.tracker.reset_all_data()
+            await update.message.reply_text("All stored data has been cleared!")
+        except Exception as e:
+            await update.message.reply_text(f"Error resetting data: {str(e)}")
+    
+    async def help_command(self, update, context):
+        """Help command handler"""
+        message = """Reddit User Tracker Commands
+
+/add <username> - Start tracking a user
+  - Initializes with recent content (no spam)
+  - Only notifies about NEW content afterward
+  - Example: /add spez
+
+/remove <username> - Stop tracking a user  
+  - Example: /remove spez
+
+/list - Show all tracked users
+
+/check - Manually check for new content
+  - Useful for immediate updates
+
+/debug - Show debug information
+  - See tracked users and data stats
+
+/reset - Clear all stored data
+  - Fresh start for all tracking
+
+/help - Show this help
+
+Auto-checking: Every minute
+Data saved to: reddit_tracker_data.csv
+Fixed: Telegram message delivery issues"""
+        await update.message.reply_text(message)
 
 # Flask routes for monitoring
 @app.route('/')

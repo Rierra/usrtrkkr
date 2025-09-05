@@ -1,50 +1,167 @@
-2025-09-05T12:13:15.710489772Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:508 - Retrieved 25 items for memesmafia
-2025-09-05T12:13:15.710490262Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:508 - Retrieved 25 items for memesmafia
-2025-09-05T12:13:15.710704492Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:522 - NEW comment found for memesmafia: ncjjra4 - Comment on: raincoat recommendation...
-2025-09-05T12:13:15.710706462Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:522 - NEW comment found for memesmafia: ncjjra4 - Comment on: raincoat recommendation...
-2025-09-05T12:13:15.710744214Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:523 -    Created: 2025-09-05 12:07:37 UTC (after user was added)
-2025-09-05T12:13:15.710754014Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:523 -    Created: 2025-09-05 12:07:37 UTC (after user was added)
-2025-09-05T12:13:15.710808696Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:524 -    Score: 1, Subreddit: r/PHMotorcycles
-2025-09-05T12:13:15.710815057Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:524 -    Score: 1, Subreddit: r/PHMotorcycles
-2025-09-05T12:13:15.711790411Z 2025-09-05 12:13:15,711 - INFO - check_for_new_content:504 - Checking user: projectwonderful7006
-2025-09-05T12:13:15.711799412Z 2025-09-05 12:13:15,711 - INFO - check_for_new_content:504 - Checking user: projectwonderful7006
-2025-09-05T12:13:15.711946529Z 2025-09-05 12:13:15,711 - INFO - get_user_content:282 - Fetching content for user: projectwonderful7006 (limit: 25, init: False)
-2025-09-05T12:13:15.711955109Z 2025-09-05 12:13:15,711 - INFO - get_user_content:282 - Fetching content for user: projectwonderful7006 (limit: 25, init: False)
-2025-09-05T12:13:15.71198714Z 2025-09-05 12:13:15,711 - INFO - get_user_content:289 - Phase 1: Trying profile method for projectwonderful7006
-2025-09-05T12:13:15.711994541Z 2025-09-05 12:13:15,711 - INFO - get_user_content:289 - Phase 1: Trying profile method for projectwonderful7006
-2025-09-05T12:13:15.872608551Z 2025-09-05 12:13:15,872 - INFO - get_user_content:307 - Profile method found 1 posts for projectwonderful7006
-2025-09-05T12:13:15.872610211Z 2025-09-05 12:13:15,872 - INFO - get_user_content:307 - Profile method found 1 posts for projectwonderful7006
-2025-09-05T12:13:38.789118844Z 2025-09-05 12:13:38,788 - INFO - get_user_content:335 - Profile method found 25 comments for projectwonderful7006
-2025-09-05T12:13:38.789148305Z 2025-09-05 12:13:38,788 - INFO - get_user_content:335 - Profile method found 25 comments for projectwonderful7006
-2025-09-05T12:13:38.789173856Z 2025-09-05 12:13:38,789 - INFO - get_user_content:424 - Final results for projectwonderful7006: 26 items total (1 posts, 25 comments)
-2025-09-05T12:13:38.789732122Z 2025-09-05 12:13:38,789 - INFO - get_user_content:424 - Final results for projectwonderful7006: 26 items total (1 posts, 25 comments)
-2025-09-05T12:13:38.789738602Z 2025-09-05 12:13:38,789 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-05-09 08:23:57', '2025-05-09 08:03:57', '2025-05-09 08:01:38', '2025-05-09 07:56:22', '2025-05-08 07:55:45']
-2025-09-05T12:13:38.789749523Z 2025-09-05 12:13:38,789 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-05-09 08:23:57', '2025-05-09 08:03:57', '2025-05-09 08:01:38', '2025-05-09 07:56:22', '2025-05-08 07:55:45']
-2025-09-05T12:13:38.789756723Z 2025-09-05 12:13:38,789 - INFO - check_for_new_content:508 - Retrieved 25 items for projectwonderful7006
-2025-09-05T12:13:38.789762543Z 2025-09-05 12:13:38,789 - INFO - check_for_new_content:508 - Retrieved 25 items for projectwonderful7006
-2025-09-05T12:13:38.79034269Z 2025-09-05 12:13:38,790 - INFO - check_for_new_content:504 - Checking user: rierrium
-2025-09-05T12:13:38.79034299Z 2025-09-05 12:13:38,790 - INFO - check_for_new_content:504 - Checking user: rierrium
-2025-09-05T12:13:38.790513398Z 2025-09-05 12:13:38,790 - INFO - get_user_content:282 - Fetching content for user: rierrium (limit: 25, init: False)
-2025-09-05T12:13:38.790516788Z 2025-09-05 12:13:38,790 - INFO - get_user_content:282 - Fetching content for user: rierrium (limit: 25, init: False)
-2025-09-05T12:13:38.79055677Z 2025-09-05 12:13:38,790 - INFO - get_user_content:289 - Phase 1: Trying profile method for rierrium
-2025-09-05T12:13:38.790614413Z 2025-09-05 12:13:38,790 - INFO - get_user_content:289 - Phase 1: Trying profile method for rierrium
-2025-09-05T12:13:39.412338899Z 2025-09-05 12:13:39,412 - INFO - get_user_content:307 - Profile method found 25 posts for rierrium
-2025-09-05T12:13:39.41236022Z 2025-09-05 12:13:39,412 - INFO - get_user_content:307 - Profile method found 25 posts for rierrium
-2025-09-05T12:14:01.850322881Z 2025-09-05 12:14:01,850 - INFO - get_user_content:335 - Profile method found 25 comments for rierrium
-2025-09-05T12:14:01.850410725Z 2025-09-05 12:14:01,850 - INFO - get_user_content:335 - Profile method found 25 comments for rierrium
-2025-09-05T12:14:01.850826074Z 2025-09-05 12:14:01,850 - INFO - get_user_content:424 - Final results for rierrium: 50 items total (25 posts, 25 comments)
-2025-09-05T12:14:01.850837534Z 2025-09-05 12:14:01,850 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45', '2025-09-02 04:01:27']
-2025-09-05T12:14:01.850842655Z 2025-09-05 12:14:01,850 - INFO - check_for_new_content:508 - Retrieved 25 items for rierrium
-2025-09-05T12:14:01.850884937Z 2025-09-05 12:14:01,850 - INFO - get_user_content:424 - Final results for rierrium: 50 items total (25 posts, 25 comments)
-2025-09-05T12:14:01.850900217Z 2025-09-05 12:14:01,850 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45', '2025-09-02 04:01:27']
-2025-09-05T12:14:01.850905838Z 2025-09-05 12:14:01,850 - INFO - check_for_new_content:508 - Retrieved 25 items for rierrium
-2025-09-05T12:14:01.853482186Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:528 - OLD comment found for rierrium: nazs9b8 (created before user was added) - adding to DB silently
-2025-09-05T12:14:01.8535733Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:528 - OLD comment found for rierrium: nazs9b8 (created before user was added) - adding to DB silently
-2025-09-05T12:14:01.854303254Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:504 - Checking user: accomplished4363
-2025-09-05T12:14:01.854306744Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:504 - Checking user: accomplished4363
-2025-09-05T12:14:01.854317194Z 2025-09-05 12:14:01,853 - INFO - get_user_content:282 - Fetching content for user: accomplished4363 (limit: 25, init: False)
-2025-09-05T12:14:01.854322534Z 2025-09-05 12:14:01,853 - INFO - get_user_content:289 - Phase 1: Trying profile method for accomplished4363
-2025-09-05T12:14:01.854332475Z 2025-09-05 12:14:01,853 - INFO - get_user_content:282 - Fetching content for user: accomplished4363 (limit: 25, init: False)
-2025-09-05T12:14:01.854336375Z 2025-09-05 12:14:01,853 - INFO - get_user_content:289 - Phase 1: Trying profile method for accomplished4363
-2025-09-05T12:14:02.032889539Z 2025-09-05 12:14:02,032 - INFO - get_user_content:307 - Profile method found 3 posts for accomplished4363
-2025-09-05T12:14:02.032890539Z 2025-09-05 12:14:02,032 - INFO - get_user_content:307 - Profile method found 3 posts for accomplished4363
+2025-09-05T12:15:04.882661602Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/telegram/ext/_application.py", line 1149, in create_task
+2025-09-05T12:15:04.882664742Z     return self.__create_task(coroutine=coroutine, update=update, name=name)
+2025-09-05T12:15:04.882667892Z            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-05T12:15:04.882670592Z   File "/opt/render/project/src/.venv/lib/python3.13/site-packages/telegram/ext/_application.py", line 1162, in __create_task
+2025-09-05T12:15:04.882673792Z     task: asyncio.Task[RT] = asyncio.create_task(
+2025-09-05T12:15:04.882676303Z                              ~~~~~~~~~~~~~~~~~~~^
+2025-09-05T12:15:04.882679523Z         self.__create_task_callback(
+2025-09-05T12:15:04.882681923Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-05T12:15:04.882685013Z     ...<2 lines>...
+2025-09-05T12:15:04.882687773Z         name=name,
+2025-09-05T12:15:04.882690113Z         ^^^^^^^^^^
+2025-09-05T12:15:04.882692524Z     )
+2025-09-05T12:15:04.882694933Z     ^
+2025-09-05T12:15:04.882700964Z   File "/usr/local/lib/python3.13/asyncio/tasks.py", line 407, in create_task
+2025-09-05T12:15:04.882703554Z     loop = events.get_running_loop()
+2025-09-05T12:15:04.882706024Z RuntimeError: no running event loop
+2025-09-05T12:15:04.882708244Z 
+2025-09-05T12:15:04.89197401Z 2025-09-05 12:15:04,891 - INFO - scheduled_check:955 - Scheduled check completed
+2025-09-05T12:15:04.8919745Z /opt/render/project/src/app.py:610: RuntimeWarning: coroutine 'Application.__create_task_callback' was never awaited
+2025-09-05T12:15:04.891996551Z   logger.error(traceback.format_exc())
+2025-09-05T12:15:04.891999581Z RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2025-09-05T12:15:04.892003471Z /opt/render/project/src/app.py:610: RuntimeWarning: coroutine 'RedditUserTracker.send_telegram_message' was never awaited
+2025-09-05T12:15:04.892006511Z   logger.error(traceback.format_exc())
+2025-09-05T12:15:04.892009061Z RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+2025-09-05T12:15:04.892010961Z 2025-09-05 12:15:04,891 - INFO - scheduled_check:955 - Scheduled check completed
+2025-09-05T12:16:04.910198765Z 2025-09-05 12:16:04,909 - INFO - scheduled_check:953 - Running scheduled content check...
+2025-09-05T12:16:04.910226897Z 2025-09-05 12:16:04,909 - INFO - scheduled_check:953 - Running scheduled content check...
+2025-09-05T12:16:04.910240458Z 2025-09-05 12:16:04,910 - INFO - check_for_new_content:493 - Starting content check for 27 users...
+2025-09-05T12:16:04.910250808Z 2025-09-05 12:16:04,910 - INFO - check_for_new_content:493 - Starting content check for 27 users...
+2025-09-05T12:16:04.910335632Z 2025-09-05 12:16:04,910 - INFO - check_for_new_content:494 - Currently tracking: ['affectionate_box4185', 'historical-lemon-471', 'radiant_band_7791', 'livid-plan7422', 'aavrial', 'fuddam', 'juanbeaut', 'braveescape240', 'pure-mousse-9043', 'patient-fly9676', 'fobfy', 'medical-ad-8105', 'livod572', 'flyhot354', 'lucky-extension-5168', 'salt-package-4376', 'give_me_the_tech', 'coldplay40', 'kahunalu', 'memesmafia', 'projectwonderful7006', 'rierrium', 'accomplished4363', 'characterworldly4109', 'no-arugula-1937', 'crbnoa', 'temper_92']
+2025-09-05T12:16:04.910341272Z 2025-09-05 12:16:04,910 - INFO - check_for_new_content:494 - Currently tracking: ['affectionate_box4185', 'historical-lemon-471', 'radiant_band_7791', 'livid-plan7422', 'aavrial', 'fuddam', 'juanbeaut', 'braveescape240', 'pure-mousse-9043', 'patient-fly9676', 'fobfy', 'medical-ad-8105', 'livod572', 'flyhot354', 'lucky-extension-5168', 'salt-package-4376', 'give_me_the_tech', 'coldplay40', 'kahunalu', 'memesmafia', 'projectwonderful7006', 'rierrium', 'accomplished4363', 'characterworldly4109', 'no-arugula-1937', 'crbnoa', 'temper_92']
+2025-09-05T12:16:04.910419246Z 2025-09-05 12:16:04,910 - INFO - check_for_new_content:504 - Checking user: affectionate_box4185
+2025-09-05T12:16:04.910438507Z 2025-09-05 12:16:04,910 - INFO - check_for_new_content:504 - Checking user: affectionate_box4185
+2025-09-05T12:16:04.910643346Z 2025-09-05 12:16:04,910 - INFO - get_user_content:282 - Fetching content for user: affectionate_box4185 (limit: 25, init: False)
+2025-09-05T12:16:04.910648486Z 2025-09-05 12:16:04,910 - INFO - get_user_content:282 - Fetching content for user: affectionate_box4185 (limit: 25, init: False)
+2025-09-05T12:16:04.910656527Z 2025-09-05 12:16:04,910 - INFO - get_user_content:289 - Phase 1: Trying profile method for affectionate_box4185
+2025-09-05T12:16:04.910697949Z 2025-09-05 12:16:04,910 - INFO - get_user_content:289 - Phase 1: Trying profile method for affectionate_box4185
+2025-09-05T12:16:05.09029268Z 2025-09-05 12:16:05,090 - INFO - get_user_content:307 - Profile method found 3 posts for affectionate_box4185
+2025-09-05T12:16:05.090313851Z 2025-09-05 12:16:05,090 - INFO - get_user_content:307 - Profile method found 3 posts for affectionate_box4185
+2025-09-05T12:16:12.188922364Z 2025-09-05 12:16:12,188 - INFO - get_user_content:335 - Profile method found 25 comments for affectionate_box4185
+2025-09-05T12:16:12.188957345Z 2025-09-05 12:16:12,188 - INFO - get_user_content:335 - Profile method found 25 comments for affectionate_box4185
+2025-09-05T12:16:12.189042389Z 2025-09-05 12:16:12,188 - INFO - get_user_content:424 - Final results for affectionate_box4185: 28 items total (3 posts, 25 comments)
+2025-09-05T12:16:12.189043389Z 2025-09-05 12:16:12,188 - INFO - get_user_content:424 - Final results for affectionate_box4185: 28 items total (3 posts, 25 comments)
+2025-09-05T12:16:12.189175796Z 2025-09-05 12:16:12,188 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-08-22 12:08:53', '2025-08-14 12:51:42', '2025-08-13 12:01:01', '2025-08-11 10:50:03', '2025-08-08 11:58:47']
+2025-09-05T12:16:12.189181386Z 2025-09-05 12:16:12,189 - INFO - check_for_new_content:508 - Retrieved 25 items for affectionate_box4185
+2025-09-05T12:16:12.189188176Z 2025-09-05 12:16:12,188 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-08-22 12:08:53', '2025-08-14 12:51:42', '2025-08-13 12:01:01', '2025-08-11 10:50:03', '2025-08-08 11:58:47']
+2025-09-05T12:16:12.189193536Z 2025-09-05 12:16:12,189 - INFO - check_for_new_content:508 - Retrieved 25 items for affectionate_box4185
+2025-09-05T12:16:12.190701666Z 2025-09-05 12:16:12,190 - INFO - check_for_new_content:504 - Checking user: historical-lemon-471
+2025-09-05T12:16:12.190703326Z 2025-09-05 12:16:12,190 - INFO - check_for_new_content:504 - Checking user: historical-lemon-471
+2025-09-05T12:16:12.190859544Z 2025-09-05 12:16:12,190 - INFO - get_user_content:282 - Fetching content for user: historical-lemon-471 (limit: 25, init: False)
+2025-09-05T12:16:12.190863974Z 2025-09-05 12:16:12,190 - INFO - get_user_content:282 - Fetching content for user: historical-lemon-471 (limit: 25, init: False)
+2025-09-05T12:16:12.190897875Z 2025-09-05 12:16:12,190 - INFO - get_user_content:289 - Phase 1: Trying profile method for historical-lemon-471
+2025-09-05T12:16:12.190949128Z 2025-09-05 12:16:12,190 - INFO - get_user_content:289 - Phase 1: Trying profile method for historical-lemon-471
+2025-09-05T12:16:12.488009911Z 2025-09-05 12:16:12,487 - INFO - get_user_content:307 - Profile method found 1 posts for historical-lemon-471
+2025-09-05T12:16:12.488035882Z 2025-09-05 12:16:12,487 - INFO - get_user_content:307 - Profile method found 1 posts for historical-lemon-471
+2025-09-05T12:16:42.253583887Z 2025-09-05 12:16:42,253 - INFO - get_user_content:335 - Profile method found 25 comments for historical-lemon-471
+2025-09-05T12:16:42.253612358Z 2025-09-05 12:16:42,253 - INFO - get_user_content:424 - Final results for historical-lemon-471: 26 items total (1 posts, 25 comments)
+2025-09-05T12:16:42.25364764Z 2025-09-05 12:16:42,253 - INFO - get_user_content:335 - Profile method found 25 comments for historical-lemon-471
+2025-09-05T12:16:42.25365633Z 2025-09-05 12:16:42,253 - INFO - get_user_content:424 - Final results for historical-lemon-471: 26 items total (1 posts, 25 comments)
+2025-09-05T12:16:42.253781016Z 2025-09-05 12:16:42,253 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-07-07 14:28:28', '2025-07-02 05:11:27', '2025-06-26 18:09:07', '2025-06-07 13:07:54', '2025-06-07 13:04:45']
+2025-09-05T12:16:42.253787706Z 2025-09-05 12:16:42,253 - INFO - check_for_new_content:508 - Retrieved 25 items for historical-lemon-471
+2025-09-05T12:16:42.253798497Z 2025-09-05 12:16:42,253 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-07-07 14:28:28', '2025-07-02 05:11:27', '2025-06-26 18:09:07', '2025-06-07 13:07:54', '2025-06-07 13:04:45']
+2025-09-05T12:16:42.253810857Z 2025-09-05 12:16:42,253 - INFO - check_for_new_content:508 - Retrieved 25 items for historical-lemon-471
+2025-09-05T12:16:42.25431229Z 2025-09-05 12:16:42,254 - INFO - check_for_new_content:504 - Checking user: radiant_band_7791
+2025-09-05T12:16:42.254321671Z 2025-09-05 12:16:42,254 - INFO - check_for_new_content:504 - Checking user: radiant_band_7791
+2025-09-05T12:16:42.254455727Z 2025-09-05 12:16:42,254 - INFO - get_user_content:282 - Fetching content for user: radiant_band_7791 (limit: 25, init: False)
+2025-09-05T12:16:42.254459887Z 2025-09-05 12:16:42,254 - INFO - get_user_content:282 - Fetching content for user: radiant_band_7791 (limit: 25, init: False)
+2025-09-05T12:16:42.254502039Z 2025-09-05 12:16:42,254 - INFO - get_user_content:289 - Phase 1: Trying profile method for radiant_band_7791
+2025-09-05T12:16:42.25451658Z 2025-09-05 12:16:42,254 - INFO - get_user_content:289 - Phase 1: Trying profile method for radiant_band_7791
+2025-09-05T12:16:42.423513169Z 2025-09-05 12:16:42,423 - INFO - get_user_content:307 - Profile method found 1 posts for radiant_band_7791
+2025-09-05T12:16:42.423537961Z 2025-09-05 12:16:42,423 - INFO - get_user_content:307 - Profile method found 1 posts for radiant_band_7791
+2025-09-05T12:17:10.047017688Z 2025-09-05 12:17:10,046 - INFO - get_user_content:335 - Profile method found 25 comments for radiant_band_7791
+2025-09-05T12:17:10.047017808Z 2025-09-05 12:17:10,046 - INFO - get_user_content:335 - Profile method found 25 comments for radiant_band_7791
+2025-09-05T12:17:10.047103632Z 2025-09-05 12:17:10,046 - INFO - get_user_content:424 - Final results for radiant_band_7791: 26 items total (1 posts, 25 comments)
+2025-09-05T12:17:10.047117023Z 2025-09-05 12:17:10,046 - INFO - get_user_content:424 - Final results for radiant_band_7791: 26 items total (1 posts, 25 comments)
+2025-09-05T12:17:10.047209237Z 2025-09-05 12:17:10,047 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-06-02 11:03:33', '2025-05-31 13:29:49', '2025-05-31 13:26:40', '2025-05-30 12:52:31', '2025-05-30 12:40:55']
+2025-09-05T12:17:10.047250659Z 2025-09-05 12:17:10,047 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-06-02 11:03:33', '2025-05-31 13:29:49', '2025-05-31 13:26:40', '2025-05-30 12:52:31', '2025-05-30 12:40:55']
+2025-09-05T12:17:10.047350884Z 2025-09-05 12:17:10,047 - INFO - check_for_new_content:508 - Retrieved 25 items for radiant_band_7791
+2025-09-05T12:17:10.047365134Z 2025-09-05 12:17:10,047 - INFO - check_for_new_content:508 - Retrieved 25 items for radiant_band_7791
+2025-09-05T12:17:10.048158041Z 2025-09-05 12:17:10,048 - INFO - check_for_new_content:504 - Checking user: livid-plan7422
+2025-09-05T12:17:10.048162851Z 2025-09-05 12:17:10,048 - INFO - check_for_new_content:504 - Checking user: livid-plan7422
+2025-09-05T12:17:10.048300668Z 2025-09-05 12:17:10,048 - INFO - get_user_content:282 - Fetching content for user: livid-plan7422 (limit: 25, init: False)
+2025-09-05T12:17:10.048303578Z 2025-09-05 12:17:10,048 - INFO - get_user_content:282 - Fetching content for user: livid-plan7422 (limit: 25, init: False)
+2025-09-05T12:17:10.048341539Z 2025-09-05 12:17:10,048 - INFO - get_user_content:289 - Phase 1: Trying profile method for livid-plan7422
+2025-09-05T12:17:10.04835315Z 2025-09-05 12:17:10,048 - INFO - get_user_content:289 - Phase 1: Trying profile method for livid-plan7422
+2025-09-05T12:17:10.197626305Z 2025-09-05 12:17:10,197 - INFO - get_user_content:307 - Profile method found 0 posts for livid-plan7422
+2025-09-05T12:17:10.197655777Z 2025-09-05 12:17:10,197 - INFO - get_user_content:307 - Profile method found 0 posts for livid-plan7422
+2025-09-05T12:17:11.0764802Z 2025-09-05 12:17:11,076 - INFO - get_user_content:335 - Profile method found 1 comments for livid-plan7422
+2025-09-05T12:17:11.076515722Z 2025-09-05 12:17:11,076 - INFO - get_user_content:335 - Profile method found 1 comments for livid-plan7422
+2025-09-05T12:17:11.076532383Z 2025-09-05 12:17:11,076 - INFO - get_user_content:348 - Profile method returned only 1 items for livid-plan7422 - trying search fallback
+2025-09-05T12:17:11.076545553Z 2025-09-05 12:17:11,076 - INFO - get_user_content:348 - Profile method returned only 1 items for livid-plan7422 - trying search fallback
+2025-09-05T12:17:11.076566514Z 2025-09-05 12:17:11,076 - INFO - get_user_content:359 - Phase 2: Using search fallback for livid-plan7422
+2025-09-05T12:17:11.076597486Z 2025-09-05 12:17:11,076 - INFO - get_user_content:359 - Phase 2: Using search fallback for livid-plan7422
+2025-09-05T12:17:11.076677459Z 2025-09-05 12:17:11,076 - INFO - get_user_content:363 - Searching with query: 'author:livid-plan7422'
+2025-09-05T12:17:11.07668759Z 2025-09-05 12:17:11,076 - INFO - get_user_content:363 - Searching with query: 'author:livid-plan7422'
+2025-09-05T12:17:11.209216589Z 2025-09-05 12:17:11,209 - INFO - get_user_content:372 - Search returned 0 total results for livid-plan7422
+2025-09-05T12:17:11.209240051Z 2025-09-05 12:17:11,209 - INFO - get_user_content:372 - Search returned 0 total results for livid-plan7422
+2025-09-05T12:17:11.209248741Z 2025-09-05 12:17:11,209 - INFO - get_user_content:392 - Search method found 0 additional posts for livid-plan7422
+2025-09-05T12:17:11.209262121Z 2025-09-05 12:17:11,209 - INFO - get_user_content:392 - Search method found 0 additional posts for livid-plan7422
+2025-09-05T12:17:11.211186321Z 2025-09-05 12:17:11,209 - INFO - get_user_content:424 - Final results for livid-plan7422: 1 items total (0 posts, 1 comments)
+2025-09-05T12:17:11.211196071Z 2025-09-05 12:17:11,209 - INFO - get_user_content:427 -   - Profile method: 0 posts, 1 comments
+2025-09-05T12:17:11.211196421Z 2025-09-05 12:17:11,209 - INFO - get_user_content:424 - Final results for livid-plan7422: 1 items total (0 posts, 1 comments)
+2025-09-05T12:17:11.211199511Z 2025-09-05 12:17:11,209 - INFO - get_user_content:428 -   - Search method: 0 additional posts
+2025-09-05T12:17:11.211202802Z 2025-09-05 12:17:11,209 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-08-31 15:44:19']
+2025-09-05T12:17:11.211223672Z 2025-09-05 12:17:11,209 - INFO - check_for_new_content:508 - Retrieved 1 items for livid-plan7422
+2025-09-05T12:17:11.211226283Z 2025-09-05 12:17:11,209 - INFO - check_for_new_content:504 - Checking user: aavrial
+2025-09-05T12:17:11.211228063Z 2025-09-05 12:17:11,209 - INFO - get_user_content:282 - Fetching content for user: aavrial (limit: 25, init: False)
+2025-09-05T12:17:11.211230563Z 2025-09-05 12:17:11,209 - INFO - get_user_content:289 - Phase 1: Trying profile method for aavrial
+2025-09-05T12:17:11.211237053Z 2025-09-05 12:17:11,209 - INFO - get_user_content:427 -   - Profile method: 0 posts, 1 comments
+2025-09-05T12:17:11.211239953Z 2025-09-05 12:17:11,209 - INFO - get_user_content:428 -   - Search method: 0 additional posts
+2025-09-05T12:17:11.211243033Z 2025-09-05 12:17:11,209 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-08-31 15:44:19']
+2025-09-05T12:17:11.211245904Z 2025-09-05 12:17:11,209 - INFO - check_for_new_content:508 - Retrieved 1 items for livid-plan7422
+2025-09-05T12:17:11.211248573Z 2025-09-05 12:17:11,209 - INFO - check_for_new_content:504 - Checking user: aavrial
+2025-09-05T12:17:11.211251134Z 2025-09-05 12:17:11,209 - INFO - get_user_content:282 - Fetching content for user: aavrial (limit: 25, init: False)
+2025-09-05T12:17:11.211253874Z 2025-09-05 12:17:11,209 - INFO - get_user_content:289 - Phase 1: Trying profile method for aavrial
+2025-09-05T12:17:11.591133363Z 2025-09-05 12:17:11,590 - INFO - get_user_content:307 - Profile method found 17 posts for aavrial
+2025-09-05T12:17:11.591138153Z 2025-09-05 12:17:11,590 - INFO - get_user_content:307 - Profile method found 17 posts for aavrial
+2025-09-05T12:17:20.109776254Z 2025-09-05 12:17:20,109 - INFO - get_user_content:335 - Profile method found 25 comments for aavrial
+2025-09-05T12:17:20.109800875Z 2025-09-05 12:17:20,109 - INFO - get_user_content:335 - Profile method found 25 comments for aavrial
+2025-09-05T12:17:20.109861088Z 2025-09-05 12:17:20,109 - INFO - get_user_content:424 - Final results for aavrial: 42 items total (17 posts, 25 comments)
+2025-09-05T12:17:20.109861288Z 2025-09-05 12:17:20,109 - INFO - get_user_content:424 - Final results for aavrial: 42 items total (17 posts, 25 comments)
+2025-09-05T12:17:20.109967793Z 2025-09-05 12:17:20,109 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-08-24 11:46:43', '2025-08-24 11:40:39', '2025-05-01 10:57:05', '2025-03-16 12:33:56', '2025-03-05 11:38:23']
+2025-09-05T12:17:20.109969773Z 2025-09-05 12:17:20,109 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-08-24 11:46:43', '2025-08-24 11:40:39', '2025-05-01 10:57:05', '2025-03-16 12:33:56', '2025-03-05 11:38:23']
+2025-09-05T12:17:20.110078508Z 2025-09-05 12:17:20,109 - INFO - check_for_new_content:508 - Retrieved 25 items for aavrial
+2025-09-05T12:17:20.110083268Z 2025-09-05 12:17:20,109 - INFO - check_for_new_content:508 - Retrieved 25 items for aavrial
+2025-09-05T12:17:20.110861304Z 2025-09-05 12:17:20,110 - INFO - check_for_new_content:504 - Checking user: fuddam
+2025-09-05T12:17:20.110863844Z 2025-09-05 12:17:20,110 - INFO - check_for_new_content:504 - Checking user: fuddam
+2025-09-05T12:17:20.111006541Z 2025-09-05 12:17:20,110 - INFO - get_user_content:282 - Fetching content for user: fuddam (limit: 25, init: False)
+2025-09-05T12:17:20.111010111Z 2025-09-05 12:17:20,110 - INFO - get_user_content:282 - Fetching content for user: fuddam (limit: 25, init: False)
+2025-09-05T12:17:20.111052593Z 2025-09-05 12:17:20,110 - INFO - get_user_content:289 - Phase 1: Trying profile method for fuddam
+2025-09-05T12:17:20.111052593Z 2025-09-05 12:17:20,110 - INFO - get_user_content:289 - Phase 1: Trying profile method for fuddam
+2025-09-05T12:17:20.392209758Z 2025-09-05 12:17:20,392 - INFO - get_user_content:307 - Profile method found 10 posts for fuddam
+2025-09-05T12:17:20.392237339Z 2025-09-05 12:17:20,392 - INFO - get_user_content:307 - Profile method found 10 posts for fuddam
+2025-09-05T12:17:33.223418194Z 2025-09-05 12:17:33,223 - INFO - get_user_content:335 - Profile method found 25 comments for fuddam
+2025-09-05T12:17:33.22353478Z 2025-09-05 12:17:33,223 - INFO - get_user_content:335 - Profile method found 25 comments for fuddam
+2025-09-05T12:17:33.223617354Z 2025-09-05 12:17:33,223 - INFO - get_user_content:424 - Final results for fuddam: 35 items total (10 posts, 25 comments)
+2025-09-05T12:17:33.224212842Z 2025-09-05 12:17:33,223 - INFO - get_user_content:424 - Final results for fuddam: 35 items total (10 posts, 25 comments)
+2025-09-05T12:17:33.224224612Z 2025-09-05 12:17:33,223 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-06-22 16:19:12', '2025-06-20 19:46:48', '2025-06-20 19:41:27', '2025-06-20 19:33:17', '2025-06-20 19:29:09']
+2025-09-05T12:17:33.224229752Z 2025-09-05 12:17:33,223 - INFO - check_for_new_content:508 - Retrieved 25 items for fuddam
+2025-09-05T12:17:33.224240393Z 2025-09-05 12:17:33,223 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-06-22 16:19:12', '2025-06-20 19:46:48', '2025-06-20 19:41:27', '2025-06-20 19:33:17', '2025-06-20 19:29:09']
+2025-09-05T12:17:33.224244973Z 2025-09-05 12:17:33,223 - INFO - check_for_new_content:508 - Retrieved 25 items for fuddam
+2025-09-05T12:17:33.22525685Z 2025-09-05 12:17:33,225 - INFO - check_for_new_content:504 - Checking user: juanbeaut
+2025-09-05T12:17:33.225859158Z 2025-09-05 12:17:33,225 - INFO - check_for_new_content:504 - Checking user: juanbeaut
+2025-09-05T12:17:33.226313449Z 2025-09-05 12:17:33,225 - INFO - get_user_content:282 - Fetching content for user: juanbeaut (limit: 25, init: False)
+2025-09-05T12:17:33.226326779Z 2025-09-05 12:17:33,225 - INFO - get_user_content:289 - Phase 1: Trying profile method for juanbeaut
+2025-09-05T12:17:33.226645364Z 2025-09-05 12:17:33,225 - INFO - get_user_content:282 - Fetching content for user: juanbeaut (limit: 25, init: False)
+2025-09-05T12:17:33.226656575Z 2025-09-05 12:17:33,225 - INFO - get_user_content:289 - Phase 1: Trying profile method for juanbeaut
+2025-09-05T12:17:33.411796481Z ==> Deploying...
+2025-09-05T12:17:33.526992018Z 2025-09-05 12:17:33,526 - INFO - get_user_content:307 - Profile method found 15 posts for juanbeaut
+2025-09-05T12:17:33.527016439Z 2025-09-05 12:17:33,526 - INFO - get_user_content:307 - Profile method found 15 posts for juanbeaut
+2025-09-05T12:18:07.556830405Z ==> Running 'python app.py'
+2025-09-05T12:18:10.265934822Z 2025-09-05 12:18:10,259 - INFO - main:800 - Initializing Telegram bot...
+2025-09-05T12:18:10.265964514Z 2025-09-05 12:18:10,259 - INFO - main:800 - Initializing Telegram bot...
+2025-09-05T12:18:10.525326013Z Traceback (most recent call last):
+2025-09-05T12:18:10.525779028Z   File "/opt/render/project/src/app.py", line 842, in <module>
+2025-09-05T12:18:10.525794819Z     main()
+2025-09-05T12:18:10.525799609Z     ~~~~^^
+2025-09-05T12:18:10.525804429Z   File "/opt/render/project/src/app.py", line 801, in main
+2025-09-05T12:18:10.525808649Z     telegram_bot = TelegramBot(TELEGRAM_TOKEN)
+2025-09-05T12:18:10.525811469Z   File "/opt/render/project/src/app.py", line 654, in __init__
+2025-09-05T12:18:10.52581476Z     self.application.add_handler(CommandHandler("start", self.start))
+2025-09-05T12:18:10.52581757Z                                                          ^^^^^^^^^^
+2025-09-05T12:18:10.52582034Z AttributeError: 'TelegramBot' object has no attribute 'start'
+2025-09-05T12:18:10.525956868Z 2025-09-05 12:18:10,525 - INFO - cleanup_on_shutdown:756 - Shutting down gracefully...
+2025-09-05T12:18:10.525963058Z 2025-09-05 12:18:10,525 - INFO - cleanup_on_shutdown:756 - Shutting down gracefully...
+2025-09-05T12:18:11.627618244Z ==> Exited with status 1
+2025-09-05T12:18:11.650904954Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
