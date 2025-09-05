@@ -648,7 +648,6 @@ class TelegramBot:
         self.application = Application.builder().token(telegram_token).build()
         self.pending_messages = [] 
 
-        
         # Add handlers
         self.application.add_handler(CommandHandler("start", self.start))
         self.application.add_handler(CommandHandler("add", self.add_user))
@@ -663,232 +662,10 @@ class TelegramBot:
         """Set the tracker instance after initialization."""
         self.tracker = tracker
 
-    def queue_message(self, message):
-        """Add message to pending queue"""
-        self.pending_messages.append(message)
-        logger.info(f"Queued message. Total pending: {len(self.pending_messages)}")    
-    
-    async def send_pending_messages(self):
-        """Send all pending messages"""
-        if not self.pending_messages:
-            return
-            
-        logger.info(f"Sending {len(self.pending_messages)} pending messages...")
-        
-        sent = 0
-        failed = 0
-        
-        messages_to_send = self.pending_messages.copy()
-        self.pending_messages.clear()
-        
-        for i, message in enumerate(messages_to_send):
-            try:
-                success = await self.tracker.send_telegram_message(message)
-                if success:
-                    sent += 1
-                    logger.info(f"Sent message {i+1}/{len(messages_to_send)}")
-                else:
-                    failed += 1
-                    
-                # Rate limiting - wait between messages
-                if i < len(messages_to_send) - 1:
-                    await asyncio.sleep(2)
-                    
-            except Exception as e:
-                logger.error(f"Error sending message {i+1}: {e}")
-                failed += 1
-        
-        logger.info(f"Message sending complete: {sent} sent, {failed} failed")
-    
-    async def start(self, update, context):
-        """Start command handler"""
-        message = """Reddit User Tracker Bot (Fixed Version)
-
-I monitor Reddit users and notify you of their new posts and comments!
-
-Quick Start:
-/add username - Start tracking a user
-/list - See who you're tracking  
-/check - Manual check for new content
-/debug - Show debug info
-/help - Full command list
-
-When you add a user, I'll initialize with their recent content and then only notify about NEW stuff!
-
-Auto-checks happen every minute with improved message delivery."""
-        await update.message.reply_text(message)
-    
-    async def add_user(self, update, context):
-        """Add user command handler"""
-        if not context.args:
-            await update.message.reply_text("Please provide a username. Example: /add spez")
-            return
-        
-        username = " ".join(context.args)
-        await update.message.reply_text(f"Adding user {username}...")
-        
-        # Run in thread to avoid blocking
-        import concurrent.futures
-        try:
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                result = await asyncio.get_event_loop().run_in_executor(
-                    executor, self.tracker.add_user, username
-                )
-            await update.message.reply_text(result)
-        except Exception as e:
-            await update.message.reply_text(f"Error adding user: {str(e)}")
-    
-    async def remove_user(self, update, context):
-        """Remove user command handler"""
-        if not context.args:
-            await update.message.reply_text("Please provide a username. Example: /remove spez")
-            return
-        
-        username = " ".join(context.args)
-        result = self.tracker.remove_user(username)
-        await update.message.reply_text(result)
-    
-    async def list_users(self, update, context):
-        """List users command handler"""
-        result = self.tracker.list_users()
-        await update.message.reply_text(result)
-    
-    async def manual_check(self, update, context):
-        """Manual check command handler"""
-        await update.message.reply_text("Checking for new content...")
-        try:
-            import concurrent.futures
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                await asyncio.get_event_loop().run_in_executor(
-                    executor, self.tracker.check_for_new_content
-                )
-            
-            # Send any queued messages
-            await self.send_pending_messages()
-            
-            await update.message.reply_text("Manual check completed! Check sent any new notifications.")
-        except Exception as e:
-            await update.message.reply_text(f"Error during manual check: {str(e)}")
-    
-    async def debug_command(self, update, context):
-        """Show debug information"""
-        try:
-            debug_info = f"""Debug Information
-
-Tracked Users: {len(self.tracker.tracked_users)}
-{chr(10).join(f"  - {user}" for user in sorted(self.tracker.tracked_users))}
-
-Total Data Entries: {len(self.tracker.data)}
-Pending Messages: {len(self.pending_messages)}
-
-Data Breakdown by User:"""
-            
-            if len(self.tracker.data) > 0:
-                user_stats = Counter(row['username'] for row in self.tracker.data)
-                for username, count in user_stats.items():
-                    debug_info += f"\n  - {username}: {count} items"
-                
-                debug_info += f"\n\nContent Type Breakdown:"
-                type_stats = Counter(row['content_type'] for row in self.tracker.data)
-                for content_type, count in type_stats.items():
-                    debug_info += f"\n  - {content_type}: {count}"
-                
-                # Show most recent entries
-                latest_entries = heapq.nlargest(3, self.tracker.data, key=lambda x: float(x['created_utc']))
-                debug_info += f"\n\nMost Recent Entries:"
-                for row in latest_entries:
-                    timestamp = datetime.fromtimestamp(float(row['created_utc'])).strftime('%Y-%m-%d %H:%M:%S')
-                    debug_info += f"\n  - {row['username']} ({row['content_type']}) - {timestamp}"
-            else:
-                debug_info += "\n  No data entries found"
-                
-            await update.message.reply_text(debug_info)
-            
-        except Exception as e:
-            await update.message.reply_text(f"Error getting debug info: {str(e)}")
-    
-    async def reset_data(self, update, context):
-        """Reset all stored data"""
-        try:
-            self.tracker.reset_all_data()
-            await update.message.reply_text("All stored data has been cleared!")
-        except Exception as e:
-            await update.message.reply_text(f"Error resetting data: {str(e)}")
-    
-    async def help_command(self, update, context):
-        """Help command handler"""
-        message = """Reddit User Tracker Commands
-
-/add <username> - Start tracking a user
-  - Initializes with recent content (no spam)
-  - Only notifies about NEW content afterward
-  - Example: /add spez
-
-/remove <username> - Stop tracking a user  
-  - Example: /remove spez
-
-/list - Show all tracked users
-
-/check - Manually check for new content
-  - Useful for immediate updates
-  - Also sends any pending messages
-
-/debug - Show debug information
-  - See tracked users and data stats
-  - View pending message count
-
-/reset - Clear all stored data
-  - Fresh start for all tracking
-
-/help - Show this help
-
-Auto-checking: Every minute
-Data saved to: reddit_tracker_data.csv
-Fixed: Telegram message delivery issues"""
-        await update.message.reply_text(message)
-    
     def start_bot(self):
-        """Start the Telegram bot with proper async handling"""
-        logger.info("Starting Telegram bot...")
-        
-        async def run_bot():
-            """Async function to run the bot"""
-            try:
-                # Initialize application inside async context
-                self.application = Application.builder().token(self.telegram_token).build()
-                self.setup_handlers()
-                
-                logger.info("Starting bot polling...")
-                await self.application.initialize()
-                await self.application.start()
-                await self.application.updater.start_polling()
-                
-                # Keep running until shutdown
-                while not shutdown_event.is_set():
-                    await asyncio.sleep(1)
-                    
-            except Exception as e:
-                logger.error(f"Error in bot: {e}")
-                logger.error(traceback.format_exc())
-            finally:
-                if self.application:
-                    try:
-                        await self.application.updater.stop()
-                        await self.application.stop()
-                        await self.application.shutdown()
-                    except Exception as e:
-                        logger.error(f"Error shutting down bot: {e}")
-        
-        # Create new event loop for this thread
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        try:
-            loop.run_until_complete(run_bot())
-        except Exception as e:
-            logger.error(f"Error running Telegram bot: {e}")
-        finally:
-            loop.close()
+        """Start the Telegram bot polling."""
+        logger.info("Starting Telegram bot polling...")
+        self.application.run_polling()
 
 # Flask routes for monitoring
 @app.route('/')
@@ -1037,13 +814,10 @@ def main():
     )
     scheduler_thread.start()
     
-    # Start Telegram bot in a separate thread with proper async handling
+    # Start Telegram bot in a separate thread
     logger.info("Starting Telegram bot thread...")
-    def run_telegram_bot():
-        telegram_bot.start_bot()
-    
     bot_thread = threading.Thread(
-        target=run_telegram_bot,
+        target=telegram_bot.start_bot,
         daemon=True
     )
     bot_thread.start()
