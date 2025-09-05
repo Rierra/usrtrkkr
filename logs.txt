@@ -1,145 +1,50 @@
-==> Running 'python app.py'
-2025-09-05 11:59:28,913 - INFO - main:1033 - Initializing Reddit tracker...
-2025-09-05 11:59:28,913 - INFO - main:1033 - Initializing Reddit tracker...
-2025-09-05 11:59:28,913 - INFO - __init__:56 - Initializing RedditUserTracker...
-2025-09-05 11:59:28,913 - INFO - __init__:56 - Initializing RedditUserTracker...
-2025-09-05 11:59:29,014 - INFO - __init__:64 - Reddit API initialized successfully
-2025-09-05 11:59:29,014 - INFO - __init__:64 - Reddit API initialized successfully
-2025-09-05 11:59:29,014 - INFO - __init__:69 - Using /data directory for persistent storage
-2025-09-05 11:59:29,014 - INFO - __init__:69 - Using /data directory for persistent storage
-2025-09-05 11:59:29,345 - INFO - __init__:77 - Telegram bot initialized
-2025-09-05 11:59:29,345 - INFO - __init__:77 - Telegram bot initialized
-2025-09-05 11:59:29,345 - INFO - __init__:87 - Data files will be stored in: /data
-2025-09-05 11:59:29,345 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
-2025-09-05 11:59:29,345 - INFO - __init__:89 - Users file: /data/tracked_users.json
-2025-09-05 11:59:29,345 - INFO - __init__:87 - Data files will be stored in: /data
-2025-09-05 11:59:29,345 - INFO - __init__:88 - CSV file: /data/reddit_tracker_data.csv
-2025-09-05 11:59:29,345 - INFO - __init__:89 - Users file: /data/tracked_users.json
-2025-09-05 11:59:29,347 - INFO - load_tracked_users:110 - Loaded 27 tracked users: ['memesmafia', 'fobfy', 'salt-package-4376', 'radiant_band_7791', 'temper_92', 'braveescape240', 'patient-fly9676', 'kahunalu', 'no-arugula-1937', 'give_me_the_tech', 'pure-mousse-9043', 'projectwonderful7006', 'medical-ad-8105', 'historical-lemon-471', 'aavrial', 'rierrium', 'affectionate_box4185', 'livod572', 'coldplay40', 'juanbeaut', 'fuddam', 'characterworldly4109', 'livid-plan7422', 'accomplished4363', 'lucky-extension-5168', 'crbnoa', 'flyhot354']
-2025-09-05 11:59:29,347 - INFO - load_tracked_users:110 - Loaded 27 tracked users: ['memesmafia', 'fobfy', 'salt-package-4376', 'radiant_band_7791', 'temper_92', 'braveescape240', 'patient-fly9676', 'kahunalu', 'no-arugula-1937', 'give_me_the_tech', 'pure-mousse-9043', 'projectwonderful7006', 'medical-ad-8105', 'historical-lemon-471', 'aavrial', 'rierrium', 'affectionate_box4185', 'livod572', 'coldplay40', 'juanbeaut', 'fuddam', 'characterworldly4109', 'livid-plan7422', 'accomplished4363', 'lucky-extension-5168', 'crbnoa', 'flyhot354']
-2025-09-05 11:59:29,357 - INFO - load_existing_data:135 - Loaded existing data with 722 entries
-2025-09-05 11:59:29,357 - INFO - load_existing_data:135 - Loaded existing data with 722 entries
-2025-09-05 11:59:29,357 - INFO - load_existing_data:139 - Data breakdown by user: {'memesmafia': 91, 'fuddam': 25, 'historical-lemon-471': 25, 'flyhot354': 25, 'projectwonderful7006': 25, 'characterworldly4109': 25, 'medical-ad-8105': 25, 'radiant_band_7791': 25, 'pure-mousse-9043': 26, 'livod572': 10, 'braveescape240': 25, 'coldplay40': 25, 'accomplished4363': 26, 'patient-fly9676': 28, 'juanbeaut': 40, 'give_me_the_tech': 50, 'affectionate_box4185': 25, 'aavrial': 37, 'salt-package-4376': 1, 'crbnoa': 26, 'temper_92': 34, 'kahunalu': 28, 'livid-plan7422': 1, 'lucky-extension-5168': 43, 'fobfy': 6, 'rierrium': 25}
-2025-09-05 11:59:29,357 - INFO - load_existing_data:139 - Data breakdown by user: {'memesmafia': 91, 'fuddam': 25, 'historical-lemon-471': 25, 'flyhot354': 25, 'projectwonderful7006': 25, 'characterworldly4109': 25, 'medical-ad-8105': 25, 'radiant_band_7791': 25, 'pure-mousse-9043': 26, 'livod572': 10, 'braveescape240': 25, 'coldplay40': 25, 'accomplished4363': 26, 'patient-fly9676': 28, 'juanbeaut': 40, 'give_me_the_tech': 50, 'affectionate_box4185': 25, 'aavrial': 37, 'salt-package-4376': 1, 'crbnoa': 26, 'temper_92': 34, 'kahunalu': 28, 'livid-plan7422': 1, 'lucky-extension-5168': 43, 'fobfy': 6, 'rierrium': 25}
-2025-09-05 11:59:29,358 - INFO - load_existing_data:141 - Latest entry timestamp: 1757072161.0
-2025-09-05 11:59:29,358 - INFO - load_existing_data:141 - Latest entry timestamp: 1757072161.0
-2025-09-05 11:59:29,358 - INFO - __init__:95 - RedditUserTracker initialization complete
-2025-09-05 11:59:29,358 - INFO - main:1037 - Initializing Telegram bot...
-2025-09-05 11:59:29,358 - INFO - __init__:95 - RedditUserTracker initialization complete
-2025-09-05 11:59:29,358 - INFO - main:1037 - Initializing Telegram bot...
-2025-09-05 11:59:29,358 - INFO - main:1041 - Starting scheduler thread...
-2025-09-05 11:59:29,358 - INFO - main:1041 - Starting scheduler thread...
-2025-09-05 11:59:29,358 - INFO - run_scheduler:974 - Scheduler started - checking every minute
-2025-09-05 11:59:29,358 - INFO - run_scheduler:974 - Scheduler started - checking every minute
-2025-09-05 11:59:29,358 - INFO - main:1050 - Starting Telegram bot thread...
-2025-09-05 11:59:29,358 - INFO - main:1050 - Starting Telegram bot thread...
-2025-09-05 11:59:29,359 - INFO - start_bot:864 - Starting Telegram bot...
-2025-09-05 11:59:29,359 - INFO - start_bot:864 - Starting Telegram bot...
-2025-09-05 11:59:29,359 - INFO - main:1060 - Starting Flask web server...
-2025-09-05 11:59:29,359 - INFO - main:1060 - Starting Flask web server...
-2025-09-05 11:59:29,359 - INFO - main:1061 - Tracked users on startup: ['memesmafia', 'fobfy', 'salt-package-4376', 'radiant_band_7791', 'temper_92', 'braveescape240', 'patient-fly9676', 'kahunalu', 'no-arugula-1937', 'give_me_the_tech', 'pure-mousse-9043', 'projectwonderful7006', 'medical-ad-8105', 'historical-lemon-471', 'aavrial', 'rierrium', 'affectionate_box4185', 'livod572', 'coldplay40', 'juanbeaut', 'fuddam', 'characterworldly4109', 'livid-plan7422', 'accomplished4363', 'lucky-extension-5168', 'crbnoa', 'flyhot354']
-2025-09-05 11:59:29,359 - INFO - main:1062 - Data entries on startup: 722
-2025-09-05 11:59:29,359 - INFO - main:1061 - Tracked users on startup: ['memesmafia', 'fobfy', 'salt-package-4376', 'radiant_band_7791', 'temper_92', 'braveescape240', 'patient-fly9676', 'kahunalu', 'no-arugula-1937', 'give_me_the_tech', 'pure-mousse-9043', 'projectwonderful7006', 'medical-ad-8105', 'historical-lemon-471', 'aavrial', 'rierrium', 'affectionate_box4185', 'livod572', 'coldplay40', 'juanbeaut', 'fuddam', 'characterworldly4109', 'livid-plan7422', 'accomplished4363', 'lucky-extension-5168', 'crbnoa', 'flyhot354']
-2025-09-05 11:59:29,359 - INFO - main:1062 - Data entries on startup: 722
- * Serving Flask app 'app'
- * Debug mode: off
-2025-09-05 11:59:29,413 - INFO - _log:97 - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:10000
- * Running on http://10.220.233.224:10000
-2025-09-05 11:59:29,413 - INFO - _log:97 - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:10000
- * Running on http://10.220.233.224:10000
-2025-09-05 11:59:29,413 - INFO - _log:97 - Press CTRL+C to quit
-2025-09-05 11:59:29,413 - INFO - _log:97 - Press CTRL+C to quit
-2025-09-05 11:59:29,543 - INFO - run_bot:873 - Starting bot polling...
-2025-09-05 11:59:29,543 - INFO - run_bot:873 - Starting bot polling...
-     ==> Deploying...
-2025-09-05 12:00:29,371 - INFO - scheduled_check:965 - Running scheduled content check...
-2025-09-05 12:00:29,371 - INFO - scheduled_check:965 - Running scheduled content check...
-2025-09-05 12:00:29,371 - INFO - check_for_new_content:492 - Starting content check for 27 users...
-2025-09-05 12:00:29,371 - INFO - check_for_new_content:492 - Starting content check for 27 users...
-2025-09-05 12:00:29,371 - INFO - check_for_new_content:493 - Currently tracking: ['memesmafia', 'fobfy', 'salt-package-4376', 'radiant_band_7791', 'temper_92', 'braveescape240', 'patient-fly9676', 'kahunalu', 'no-arugula-1937', 'give_me_the_tech', 'pure-mousse-9043', 'projectwonderful7006', 'medical-ad-8105', 'historical-lemon-471', 'aavrial', 'rierrium', 'affectionate_box4185', 'livod572', 'coldplay40', 'juanbeaut', 'fuddam', 'characterworldly4109', 'livid-plan7422', 'accomplished4363', 'lucky-extension-5168', 'crbnoa', 'flyhot354']
-2025-09-05 12:00:29,371 - INFO - check_for_new_content:493 - Currently tracking: ['memesmafia', 'fobfy', 'salt-package-4376', 'radiant_band_7791', 'temper_92', 'braveescape240', 'patient-fly9676', 'kahunalu', 'no-arugula-1937', 'give_me_the_tech', 'pure-mousse-9043', 'projectwonderful7006', 'medical-ad-8105', 'historical-lemon-471', 'aavrial', 'rierrium', 'affectionate_box4185', 'livod572', 'coldplay40', 'juanbeaut', 'fuddam', 'characterworldly4109', 'livid-plan7422', 'accomplished4363', 'lucky-extension-5168', 'crbnoa', 'flyhot354']
-2025-09-05 12:00:29,371 - INFO - check_for_new_content:503 - Checking user: memesmafia
-2025-09-05 12:00:29,371 - INFO - check_for_new_content:503 - Checking user: memesmafia
-2025-09-05 12:00:29,372 - INFO - get_user_content:281 - Fetching content for user: memesmafia (limit: 25, init: False)
-2025-09-05 12:00:29,372 - INFO - get_user_content:281 - Fetching content for user: memesmafia (limit: 25, init: False)
-2025-09-05 12:00:29,372 - INFO - get_user_content:288 - Phase 1: Trying profile method for memesmafia
-2025-09-05 12:00:29,372 - INFO - get_user_content:288 - Phase 1: Trying profile method for memesmafia
-2025-09-05 12:00:30,092 - INFO - get_user_content:306 - Profile method found 22 posts for memesmafia
-2025-09-05 12:00:30,092 - INFO - get_user_content:306 - Profile method found 22 posts for memesmafia
-2025-09-05 12:00:46,059 - INFO - __init__:56 - Initializing RedditUserTracker...
-2025-09-05 12:00:46,197 - INFO - __init__:65 - Reddit API initialized successfully
-2025-09-05 12:00:46,197 - INFO - __init__:70 - Using /data directory for persistent storage
-2025-09-05 12:00:46,197 - INFO - __init__:65 - Reddit API initialized successfully
-2025-09-05 12:00:46,197 - INFO - __init__:70 - Using /data directory for persistent storage
-2025-09-05 12:00:46,269 - INFO - __init__:78 - Telegram bot initialized
-2025-09-05 12:00:46,269 - INFO - __init__:88 - Data files will be stored in: /data
-2025-09-05 12:00:46,269 - INFO - __init__:78 - Telegram bot initialized
-2025-09-05 12:00:46,269 - INFO - __init__:88 - Data files will be stored in: /data
-2025-09-05 12:00:46,269 - INFO - __init__:89 - CSV file: /data/reddit_tracker_data.csv
-2025-09-05 12:00:46,269 - INFO - __init__:89 - CSV file: /data/reddit_tracker_data.csv
-2025-09-05 12:00:46,269 - INFO - __init__:90 - Users file: /data/tracked_users.json
-2025-09-05 12:00:46,269 - INFO - __init__:90 - Users file: /data/tracked_users.json
-2025-09-05 12:00:46,271 - INFO - load_tracked_users:111 - Loaded 27 tracked users: ['affectionate_box4185', 'salt-package-4376', 'memesmafia', 'aavrial', 'fobfy', 'give_me_the_tech', 'coldplay40', 'patient-fly9676', 'medical-ad-8105', 'accomplished4363', 'no-arugula-1937', 'braveescape240', 'temper_92', 'projectwonderful7006', 'kahunalu', 'juanbeaut', 'characterworldly4109', 'livod572', 'crbnoa', 'flyhot354', 'historical-lemon-471', 'livid-plan7422', 'pure-mousse-9043', 'rierrium', 'fuddam', 'lucky-extension-5168', 'radiant_band_7791']
-2025-09-05 12:00:46,271 - INFO - load_tracked_users:111 - Loaded 27 tracked users: ['affectionate_box4185', 'salt-package-4376', 'memesmafia', 'aavrial', 'fobfy', 'give_me_the_tech', 'coldplay40', 'patient-fly9676', 'medical-ad-8105', 'accomplished4363', 'no-arugula-1937', 'braveescape240', 'temper_92', 'projectwonderful7006', 'kahunalu', 'juanbeaut', 'characterworldly4109', 'livod572', 'crbnoa', 'flyhot354', 'historical-lemon-471', 'livid-plan7422', 'pure-mousse-9043', 'rierrium', 'fuddam', 'lucky-extension-5168', 'radiant_band_7791']
-2025-09-05 12:00:46,278 - INFO - load_existing_data:136 - Loaded existing data with 722 entries
-2025-09-05 12:00:46,278 - INFO - load_existing_data:136 - Loaded existing data with 722 entries
-2025-09-05 12:00:46,278 - INFO - load_existing_data:140 - Data breakdown by user: {'memesmafia': 91, 'fuddam': 25, 'historical-lemon-471': 25, 'flyhot354': 25, 'projectwonderful7006': 25, 'characterworldly4109': 25, 'medical-ad-8105': 25, 'radiant_band_7791': 25, 'pure-mousse-9043': 26, 'livod572': 10, 'braveescape240': 25, 'coldplay40': 25, 'accomplished4363': 26, 'patient-fly9676': 28, 'juanbeaut': 40, 'give_me_the_tech': 50, 'affectionate_box4185': 25, 'aavrial': 37, 'salt-package-4376': 1, 'crbnoa': 26, 'temper_92': 34, 'kahunalu': 28, 'livid-plan7422': 1, 'lucky-extension-5168': 43, 'fobfy': 6, 'rierrium': 25}
-2025-09-05 12:00:46,278 - INFO - load_existing_data:140 - Data breakdown by user: {'memesmafia': 91, 'fuddam': 25, 'historical-lemon-471': 25, 'flyhot354': 25, 'projectwonderful7006': 25, 'characterworldly4109': 25, 'medical-ad-8105': 25, 'radiant_band_7791': 25, 'pure-mousse-9043': 26, 'livod572': 10, 'braveescape240': 25, 'coldplay40': 25, 'accomplished4363': 26, 'patient-fly9676': 28, 'juanbeaut': 40, 'give_me_the_tech': 50, 'affectionate_box4185': 25, 'aavrial': 37, 'salt-package-4376': 1, 'crbnoa': 26, 'temper_92': 34, 'kahunalu': 28, 'livid-plan7422': 1, 'lucky-extension-5168': 43, 'fobfy': 6, 'rierrium': 25}
-2025-09-05 12:00:46,278 - INFO - load_existing_data:142 - Latest entry timestamp: 1757072161.0
-2025-09-05 12:00:46,278 - INFO - load_existing_data:142 - Latest entry timestamp: 1757072161.0
-2025-09-05 12:00:46,278 - INFO - __init__:96 - RedditUserTracker initialization complete
-2025-09-05 12:00:46,278 - INFO - __init__:96 - RedditUserTracker initialization complete
-2025-09-05 12:00:46,279 - INFO - main:1032 - Starting scheduler thread...
-2025-09-05 12:00:46,279 - INFO - main:1032 - Starting scheduler thread...
-2025-09-05 12:00:46,279 - INFO - run_scheduler:962 - Scheduler started - checking every minute
-2025-09-05 12:00:46,279 - INFO - main:1041 - Starting Telegram bot thread...
-2025-09-05 12:00:46,279 - INFO - run_scheduler:962 - Scheduler started - checking every minute
-2025-09-05 12:00:46,279 - INFO - main:1041 - Starting Telegram bot thread...
-2025-09-05 12:00:46,279 - INFO - start_bot:852 - Starting Telegram bot...
-2025-09-05 12:00:46,280 - INFO - main:1051 - Starting Flask web server...
-2025-09-05 12:00:46,279 - INFO - start_bot:852 - Starting Telegram bot...
-2025-09-05 12:00:46,280 - INFO - main:1051 - Starting Flask web server...
-2025-09-05 12:00:46,280 - INFO - main:1052 - Tracked users on startup: ['affectionate_box4185', 'salt-package-4376', 'memesmafia', 'aavrial', 'fobfy', 'give_me_the_tech', 'coldplay40', 'patient-fly9676', 'medical-ad-8105', 'accomplished4363', 'no-arugula-1937', 'braveescape240', 'temper_92', 'projectwonderful7006', 'kahunalu', 'juanbeaut', 'characterworldly4109', 'livod572', 'crbnoa', 'flyhot354', 'historical-lemon-471', 'livid-plan7422', 'pure-mousse-9043', 'rierrium', 'fuddam', 'lucky-extension-5168', 'radiant_band_7791']
-2025-09-05 12:00:46,280 - INFO - main:1052 - Tracked users on startup: ['affectionate_box4185', 'salt-package-4376', 'memesmafia', 'aavrial', 'fobfy', 'give_me_the_tech', 'coldplay40', 'patient-fly9676', 'medical-ad-8105', 'accomplished4363', 'no-arugula-1937', 'braveescape240', 'temper_92', 'projectwonderful7006', 'kahunalu', 'juanbeaut', 'characterworldly4109', 'livod572', 'crbnoa', 'flyhot354', 'historical-lemon-471', 'livid-plan7422', 'pure-mousse-9043', 'rierrium', 'fuddam', 'lucky-extension-5168', 'radiant_band_7791']
-2025-09-05 12:00:46,281 - INFO - main:1053 - Data entries on startup: 722
-2025-09-05 12:00:46,281 - INFO - main:1053 - Data entries on startup: 722
-2025-09-05 12:00:46,280 - ERROR - run_bot:871 - Error in bot: 'TelegramBot' object has no attribute 'telegram_token'
-2025-09-05 12:00:46,280 - ERROR - run_bot:871 - Error in bot: 'TelegramBot' object has no attribute 'telegram_token'
-2025-09-05 12:00:46,282 - ERROR - run_bot:872 - Traceback (most recent call last):
-  File "/opt/render/project/src/app.py", line 858, in run_bot
-    self.application = Application.builder().token(self.telegram_token).build()
-                                                   ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'TelegramBot' object has no attribute 'telegram_token'
-2025-09-05 12:00:46,282 - ERROR - run_bot:872 - Traceback (most recent call last):
-  File "/opt/render/project/src/app.py", line 858, in run_bot
-    self.application = Application.builder().token(self.telegram_token).build()
-                                                   ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'TelegramBot' object has no attribute 'telegram_token'
-2025-09-05 12:00:46,282 - ERROR - run_bot:880 - Error shutting down bot: This Updater is not running!
-2025-09-05 12:00:46,282 - ERROR - run_bot:880 - Error shutting down bot: This Updater is not running!
- * Serving Flask app 'app'
- * Debug mode: off
-2025-09-05 12:00:46,286 - INFO - _log:97 - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:10000
- * Running on http://10.220.233.224:10000
-2025-09-05 12:00:46,286 - INFO - _log:97 - Press CTRL+C to quit
-2025-09-05 12:00:46,286 - INFO - _log:97 - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:10000
- * Running on http://10.220.233.224:10000
-2025-09-05 12:00:46,286 - INFO - _log:97 - Press CTRL+C to quit
-2025-09-05 12:00:46,803 - INFO - _log:97 - 127.0.0.1 - - [05/Sep/2025 12:00:46] "HEAD / HTTP/1.1" 200 -
-2025-09-05 12:00:46,803 - INFO - _log:97 - 127.0.0.1 - - [05/Sep/2025 12:00:46] "HEAD / HTTP/1.1" 200 -
-     ==> Your service is live 🎉
-     ==> 
-     ==> ///////////////////////////////////////////////////////////
-     ==> 
-     ==> Available at your primary URL https://usrtrkkr.onrender.com
-     ==> 
-     ==> ///////////////////////////////////////////////////////////
-     [GET]502usrtrkkr.onrender.com/clientIP="34.82.80.145" requestID="18f62760-ab8d-42ad" responseTimeMS=23 responseBytes=223153 userAgent="Go-http-client/2.0"
+2025-09-05T12:13:15.710489772Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:508 - Retrieved 25 items for memesmafia
+2025-09-05T12:13:15.710490262Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:508 - Retrieved 25 items for memesmafia
+2025-09-05T12:13:15.710704492Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:522 - NEW comment found for memesmafia: ncjjra4 - Comment on: raincoat recommendation...
+2025-09-05T12:13:15.710706462Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:522 - NEW comment found for memesmafia: ncjjra4 - Comment on: raincoat recommendation...
+2025-09-05T12:13:15.710744214Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:523 -    Created: 2025-09-05 12:07:37 UTC (after user was added)
+2025-09-05T12:13:15.710754014Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:523 -    Created: 2025-09-05 12:07:37 UTC (after user was added)
+2025-09-05T12:13:15.710808696Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:524 -    Score: 1, Subreddit: r/PHMotorcycles
+2025-09-05T12:13:15.710815057Z 2025-09-05 12:13:15,710 - INFO - check_for_new_content:524 -    Score: 1, Subreddit: r/PHMotorcycles
+2025-09-05T12:13:15.711790411Z 2025-09-05 12:13:15,711 - INFO - check_for_new_content:504 - Checking user: projectwonderful7006
+2025-09-05T12:13:15.711799412Z 2025-09-05 12:13:15,711 - INFO - check_for_new_content:504 - Checking user: projectwonderful7006
+2025-09-05T12:13:15.711946529Z 2025-09-05 12:13:15,711 - INFO - get_user_content:282 - Fetching content for user: projectwonderful7006 (limit: 25, init: False)
+2025-09-05T12:13:15.711955109Z 2025-09-05 12:13:15,711 - INFO - get_user_content:282 - Fetching content for user: projectwonderful7006 (limit: 25, init: False)
+2025-09-05T12:13:15.71198714Z 2025-09-05 12:13:15,711 - INFO - get_user_content:289 - Phase 1: Trying profile method for projectwonderful7006
+2025-09-05T12:13:15.711994541Z 2025-09-05 12:13:15,711 - INFO - get_user_content:289 - Phase 1: Trying profile method for projectwonderful7006
+2025-09-05T12:13:15.872608551Z 2025-09-05 12:13:15,872 - INFO - get_user_content:307 - Profile method found 1 posts for projectwonderful7006
+2025-09-05T12:13:15.872610211Z 2025-09-05 12:13:15,872 - INFO - get_user_content:307 - Profile method found 1 posts for projectwonderful7006
+2025-09-05T12:13:38.789118844Z 2025-09-05 12:13:38,788 - INFO - get_user_content:335 - Profile method found 25 comments for projectwonderful7006
+2025-09-05T12:13:38.789148305Z 2025-09-05 12:13:38,788 - INFO - get_user_content:335 - Profile method found 25 comments for projectwonderful7006
+2025-09-05T12:13:38.789173856Z 2025-09-05 12:13:38,789 - INFO - get_user_content:424 - Final results for projectwonderful7006: 26 items total (1 posts, 25 comments)
+2025-09-05T12:13:38.789732122Z 2025-09-05 12:13:38,789 - INFO - get_user_content:424 - Final results for projectwonderful7006: 26 items total (1 posts, 25 comments)
+2025-09-05T12:13:38.789738602Z 2025-09-05 12:13:38,789 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-05-09 08:23:57', '2025-05-09 08:03:57', '2025-05-09 08:01:38', '2025-05-09 07:56:22', '2025-05-08 07:55:45']
+2025-09-05T12:13:38.789749523Z 2025-09-05 12:13:38,789 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-05-09 08:23:57', '2025-05-09 08:03:57', '2025-05-09 08:01:38', '2025-05-09 07:56:22', '2025-05-08 07:55:45']
+2025-09-05T12:13:38.789756723Z 2025-09-05 12:13:38,789 - INFO - check_for_new_content:508 - Retrieved 25 items for projectwonderful7006
+2025-09-05T12:13:38.789762543Z 2025-09-05 12:13:38,789 - INFO - check_for_new_content:508 - Retrieved 25 items for projectwonderful7006
+2025-09-05T12:13:38.79034269Z 2025-09-05 12:13:38,790 - INFO - check_for_new_content:504 - Checking user: rierrium
+2025-09-05T12:13:38.79034299Z 2025-09-05 12:13:38,790 - INFO - check_for_new_content:504 - Checking user: rierrium
+2025-09-05T12:13:38.790513398Z 2025-09-05 12:13:38,790 - INFO - get_user_content:282 - Fetching content for user: rierrium (limit: 25, init: False)
+2025-09-05T12:13:38.790516788Z 2025-09-05 12:13:38,790 - INFO - get_user_content:282 - Fetching content for user: rierrium (limit: 25, init: False)
+2025-09-05T12:13:38.79055677Z 2025-09-05 12:13:38,790 - INFO - get_user_content:289 - Phase 1: Trying profile method for rierrium
+2025-09-05T12:13:38.790614413Z 2025-09-05 12:13:38,790 - INFO - get_user_content:289 - Phase 1: Trying profile method for rierrium
+2025-09-05T12:13:39.412338899Z 2025-09-05 12:13:39,412 - INFO - get_user_content:307 - Profile method found 25 posts for rierrium
+2025-09-05T12:13:39.41236022Z 2025-09-05 12:13:39,412 - INFO - get_user_content:307 - Profile method found 25 posts for rierrium
+2025-09-05T12:14:01.850322881Z 2025-09-05 12:14:01,850 - INFO - get_user_content:335 - Profile method found 25 comments for rierrium
+2025-09-05T12:14:01.850410725Z 2025-09-05 12:14:01,850 - INFO - get_user_content:335 - Profile method found 25 comments for rierrium
+2025-09-05T12:14:01.850826074Z 2025-09-05 12:14:01,850 - INFO - get_user_content:424 - Final results for rierrium: 50 items total (25 posts, 25 comments)
+2025-09-05T12:14:01.850837534Z 2025-09-05 12:14:01,850 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45', '2025-09-02 04:01:27']
+2025-09-05T12:14:01.850842655Z 2025-09-05 12:14:01,850 - INFO - check_for_new_content:508 - Retrieved 25 items for rierrium
+2025-09-05T12:14:01.850884937Z 2025-09-05 12:14:01,850 - INFO - get_user_content:424 - Final results for rierrium: 50 items total (25 posts, 25 comments)
+2025-09-05T12:14:01.850900217Z 2025-09-05 12:14:01,850 - INFO - get_user_content:434 - Most recent content timestamps: ['2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45', '2025-09-02 04:01:27']
+2025-09-05T12:14:01.850905838Z 2025-09-05 12:14:01,850 - INFO - check_for_new_content:508 - Retrieved 25 items for rierrium
+2025-09-05T12:14:01.853482186Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:528 - OLD comment found for rierrium: nazs9b8 (created before user was added) - adding to DB silently
+2025-09-05T12:14:01.8535733Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:528 - OLD comment found for rierrium: nazs9b8 (created before user was added) - adding to DB silently
+2025-09-05T12:14:01.854303254Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:504 - Checking user: accomplished4363
+2025-09-05T12:14:01.854306744Z 2025-09-05 12:14:01,853 - INFO - check_for_new_content:504 - Checking user: accomplished4363
+2025-09-05T12:14:01.854317194Z 2025-09-05 12:14:01,853 - INFO - get_user_content:282 - Fetching content for user: accomplished4363 (limit: 25, init: False)
+2025-09-05T12:14:01.854322534Z 2025-09-05 12:14:01,853 - INFO - get_user_content:289 - Phase 1: Trying profile method for accomplished4363
+2025-09-05T12:14:01.854332475Z 2025-09-05 12:14:01,853 - INFO - get_user_content:282 - Fetching content for user: accomplished4363 (limit: 25, init: False)
+2025-09-05T12:14:01.854336375Z 2025-09-05 12:14:01,853 - INFO - get_user_content:289 - Phase 1: Trying profile method for accomplished4363
+2025-09-05T12:14:02.032889539Z 2025-09-05 12:14:02,032 - INFO - get_user_content:307 - Profile method found 3 posts for accomplished4363
+2025-09-05T12:14:02.032890539Z 2025-09-05 12:14:02,032 - INFO - get_user_content:307 - Profile method found 3 posts for accomplished4363

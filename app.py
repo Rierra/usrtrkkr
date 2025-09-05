@@ -55,6 +55,7 @@ class RedditUserTracker:
         try:
             logger.info("Initializing RedditUserTracker...")
             self.telegram_application = telegram_application # Store the application instance
+            self.telegram_loop = telegram_application.loop # Store the event loop
             
             # Initialize Reddit API
             self.reddit = praw.Reddit(
@@ -591,18 +592,19 @@ class RedditUserTracker:
     def queue_messages_for_telegram(self, new_entries):
         """Send messages to Telegram by creating tasks on the bot's event loop."""
         try:
-            if not self.telegram_application:
-                logger.error("Telegram application not available in tracker. Cannot send messages.")
+            if not self.telegram_loop or not self.telegram_loop.is_running():
+                logger.error("Telegram event loop is not available or not running. Cannot send messages.")
                 return
 
-            logger.info(f"Queueing {len(new_entries)} messages for sending via application event loop.")
+            logger.info(f"Queueing {len(new_entries)} messages for sending via thread-safe call.")
             
             for entry in new_entries:
                 message = self.format_telegram_message(entry)
                 
-                # Schedule the send_telegram_message coroutine to run on the application's event loop
-                self.telegram_application.create_task(self.send_telegram_message(message, entry))
-            
+                # Schedule the send_telegram_message coroutine to run on the application's event loop from our thread
+                future = asyncio.run_coroutine_threadsafe(self.send_telegram_message(message, entry), self.telegram_loop)
+                # Optionally, you could add a callback to the future to check for exceptions, but for now, we rely on the coroutine's own logging.
+
             logger.info(f"All {len(new_entries)} messages have been scheduled for sending.")
             
         except Exception as e:
