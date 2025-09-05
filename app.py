@@ -55,7 +55,17 @@ class RedditUserTracker:
         try:
             logger.info("Initializing RedditUserTracker...")
             self.telegram_application = telegram_application # Store the application instance
-            self.telegram_loop = telegram_application.loop # Store the event loop
+            # Get the event loop from the application's updater
+            import asyncio
+            try:
+                self.telegram_loop = telegram_application.updater.loop
+            except AttributeError:
+                # Fallback: get the current event loop or create a new one
+                try:
+                    self.telegram_loop = asyncio.get_running_loop()
+                except RuntimeError:
+                    self.telegram_loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(self.telegram_loop)
             
             # Initialize Reddit API
             self.reddit = praw.Reddit(

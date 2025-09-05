@@ -1,0 +1,18 @@
+The fix is to get the event loop differently.
+Fix:
+Replace this line in the __init__ method of RedditUserTracker class:
+pythonself.telegram_loop = telegram_application.loop # Store the event loop
+
+
+With:
+python# Get the event loop from the application's updater
+import asyncio
+try:
+    self.telegram_loop = telegram_application.updater.loop
+except AttributeError:
+    # Fallback: get the current event loop or create a new one
+    try:
+        self.telegram_loop = asyncio.get_running_loop()
+    except RuntimeError:
+        self.telegram_loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(self.telegram_loop)
