@@ -643,14 +643,13 @@ class RedditUserTracker:
         return False
 
 class TelegramBot:
-    def __init__(self, tracker, telegram_token):
-        self.tracker = tracker
-        self.telegram_token = telegram_token
-        self.application = None
+    def __init__(self, telegram_token):
+        self.tracker = None # Initialize tracker as None
+        self.application = Application.builder().token(telegram_token).build()
         self.pending_messages = [] 
 
-    def setup_handlers(self):
-        """Setup command handlers"""
+        
+        # Add handlers
         self.application.add_handler(CommandHandler("start", self.start))
         self.application.add_handler(CommandHandler("add", self.add_user))
         self.application.add_handler(CommandHandler("remove", self.remove_user))
@@ -659,6 +658,10 @@ class TelegramBot:
         self.application.add_handler(CommandHandler("reset", self.reset_data))
         self.application.add_handler(CommandHandler("help", self.help_command))
         self.application.add_handler(CommandHandler("debug", self.debug_command))
+
+    def set_tracker(self, tracker):
+        """Set the tracker instance after initialization."""
+        self.tracker = tracker
 
     def queue_message(self, message):
         """Add message to pending queue"""
@@ -1014,9 +1017,16 @@ def main():
         'user_agent': REDDIT_USER_AGENT
     }
     
+    # Initialize Telegram bot
+    logger.info("Initializing Telegram bot...")
+    telegram_bot = TelegramBot(TELEGRAM_TOKEN)
+    
     # Initialize tracker
     logger.info("Initializing Reddit tracker...")
     tracker = RedditUserTracker(REDDIT_CREDENTIALS, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, telegram_bot.application)
+
+    # Set the tracker on the bot to break circular dependency
+    telegram_bot.set_tracker(tracker)
     
     # Start scheduler in a separate thread
     logger.info("Starting scheduler thread...")

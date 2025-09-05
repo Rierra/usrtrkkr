@@ -1,150 +1,129 @@
-2025-09-05 11:36:40,827 - INFO - check_for_new_content:503 - Checking user: rierrium
-2025-09-05 11:36:40,827 - INFO - check_for_new_content:503 - Checking user: rierrium
-2025-09-05 11:36:40,827 - INFO - get_user_content:281 - Fetching content for user: rierrium (limit: 25, init: False)
-2025-09-05 11:36:40,827 - INFO - get_user_content:281 - Fetching content for user: rierrium (limit: 25, init: False)
-2025-09-05 11:36:40,827 - INFO - get_user_content:288 - Phase 1: Trying profile method for rierrium
-2025-09-05 11:36:40,827 - INFO - get_user_content:288 - Phase 1: Trying profile method for rierrium
-2025-09-05 11:36:41,443 - INFO - get_user_content:306 - Profile method found 25 posts for rierrium
-2025-09-05 11:36:41,443 - INFO - get_user_content:306 - Profile method found 25 posts for rierrium
-2025-09-05 11:37:01,425 - INFO - get_user_content:334 - Profile method found 25 comments for rierrium
-2025-09-05 11:37:01,425 - INFO - get_user_content:334 - Profile method found 25 comments for rierrium
-2025-09-05 11:37:01,425 - INFO - get_user_content:423 - Final results for rierrium: 50 items total (25 posts, 25 comments)
-2025-09-05 11:37:01,426 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-05 11:36:01', '2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45']
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:507 - Retrieved 25 items for rierrium
-2025-09-05 11:37:01,425 - INFO - get_user_content:423 - Final results for rierrium: 50 items total (25 posts, 25 comments)
-2025-09-05 11:37:01,426 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-05 11:36:01', '2025-09-04 14:06:25', '2025-09-04 13:50:28', '2025-09-03 14:45:31', '2025-09-02 11:00:45']
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:507 - Retrieved 25 items for rierrium
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:521 - NEW comment found for rierrium: ncjf2xi - Comment on: You hear that? r/GTBAE has a pulse aga...
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:521 - NEW comment found for rierrium: ncjf2xi - Comment on: You hear that? r/GTBAE has a pulse aga...
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:522 -    Created: 2025-09-05 11:36:01 UTC (after user was added)
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:522 -    Created: 2025-09-05 11:36:01 UTC (after user was added)
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:523 -    Score: 1, Subreddit: r/GTBAE
-2025-09-05 11:37:01,426 - INFO - check_for_new_content:523 -    Score: 1, Subreddit: r/GTBAE
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbixtn0 (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbixtn0 (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbior86 (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbgn0ru (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbior86 (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfxg3y (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbgn0ru (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,428 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfxg3y (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfx1uk (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbfx1uk (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbckfoa (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbckfoa (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbbsy0b (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nbbsy0b (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nba5zry (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nba5zry (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb6qhxd (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,429 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb6qhxd (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb4k36e (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb4k36e (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rvlo (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rvlo (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rf6t (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2rf6t (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nwqy (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,430 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nwqy (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,431 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nvnk (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,431 - INFO - check_for_new_content:527 - OLD comment found for rierrium: nb2nvnk (created before user was added) - adding to DB silently
-2025-09-05 11:37:01,431 - INFO - check_for_new_content:503 - Checking user: fuddam
-2025-09-05 11:37:01,431 - INFO - check_for_new_content:503 - Checking user: fuddam
-2025-09-05 11:37:01,431 - INFO - get_user_content:281 - Fetching content for user: fuddam (limit: 25, init: False)
-2025-09-05 11:37:01,431 - INFO - get_user_content:288 - Phase 1: Trying profile method for fuddam
-2025-09-05 11:37:01,431 - INFO - get_user_content:281 - Fetching content for user: fuddam (limit: 25, init: False)
-2025-09-05 11:37:01,431 - INFO - get_user_content:288 - Phase 1: Trying profile method for fuddam
-2025-09-05 11:37:01,783 - INFO - get_user_content:306 - Profile method found 10 posts for fuddam
-2025-09-05 11:37:01,783 - INFO - get_user_content:306 - Profile method found 10 posts for fuddam
-2025-09-05 11:37:16,102 - INFO - get_user_content:334 - Profile method found 25 comments for fuddam
-2025-09-05 11:37:16,102 - INFO - get_user_content:334 - Profile method found 25 comments for fuddam
-2025-09-05 11:37:16,103 - INFO - get_user_content:423 - Final results for fuddam: 35 items total (10 posts, 25 comments)
-2025-09-05 11:37:16,103 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-06-22 16:19:12', '2025-06-20 19:46:48', '2025-06-20 19:41:27', '2025-06-20 19:33:17', '2025-06-20 19:29:09']
-2025-09-05 11:37:16,103 - INFO - get_user_content:423 - Final results for fuddam: 35 items total (10 posts, 25 comments)
-2025-09-05 11:37:16,103 - INFO - check_for_new_content:507 - Retrieved 25 items for fuddam
-2025-09-05 11:37:16,103 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-06-22 16:19:12', '2025-06-20 19:46:48', '2025-06-20 19:41:27', '2025-06-20 19:33:17', '2025-06-20 19:29:09']
-2025-09-05 11:37:16,103 - INFO - check_for_new_content:507 - Retrieved 25 items for fuddam
-2025-09-05 11:37:16,104 - INFO - check_for_new_content:503 - Checking user: give_me_the_tech
-2025-09-05 11:37:16,104 - INFO - check_for_new_content:503 - Checking user: give_me_the_tech
-2025-09-05 11:37:16,104 - INFO - get_user_content:281 - Fetching content for user: give_me_the_tech (limit: 25, init: False)
-2025-09-05 11:37:16,104 - INFO - get_user_content:281 - Fetching content for user: give_me_the_tech (limit: 25, init: False)
-2025-09-05 11:37:16,104 - INFO - get_user_content:288 - Phase 1: Trying profile method for give_me_the_tech
-2025-09-05 11:37:16,104 - INFO - get_user_content:288 - Phase 1: Trying profile method for give_me_the_tech
-2025-09-05 11:37:16,550 - INFO - get_user_content:306 - Profile method found 24 posts for give_me_the_tech
-2025-09-05 11:37:16,550 - INFO - get_user_content:306 - Profile method found 24 posts for give_me_the_tech
-2025-09-05 11:37:30,294 - INFO - get_user_content:334 - Profile method found 25 comments for give_me_the_tech
-2025-09-05 11:37:30,294 - INFO - get_user_content:334 - Profile method found 25 comments for give_me_the_tech
-2025-09-05 11:37:30,294 - INFO - get_user_content:423 - Final results for give_me_the_tech: 49 items total (24 posts, 25 comments)
-2025-09-05 11:37:30,294 - INFO - get_user_content:423 - Final results for give_me_the_tech: 49 items total (24 posts, 25 comments)
-2025-09-05 11:37:30,295 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 23:39:04', '2025-09-03 23:38:47', '2025-09-03 19:35:46', '2025-09-01 07:06:25', '2025-08-30 15:21:03']
-2025-09-05 11:37:30,295 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 23:39:04', '2025-09-03 23:38:47', '2025-09-03 19:35:46', '2025-09-01 07:06:25', '2025-08-30 15:21:03']
-2025-09-05 11:37:30,295 - INFO - check_for_new_content:507 - Retrieved 25 items for give_me_the_tech
-2025-09-05 11:37:30,295 - INFO - check_for_new_content:507 - Retrieved 25 items for give_me_the_tech
-2025-09-05 11:37:30,296 - INFO - check_for_new_content:503 - Checking user: livod572
-2025-09-05 11:37:30,296 - INFO - check_for_new_content:503 - Checking user: livod572
-2025-09-05 11:37:30,296 - INFO - get_user_content:281 - Fetching content for user: livod572 (limit: 25, init: False)
-2025-09-05 11:37:30,296 - INFO - get_user_content:281 - Fetching content for user: livod572 (limit: 25, init: False)
-2025-09-05 11:37:30,296 - INFO - get_user_content:288 - Phase 1: Trying profile method for livod572
-2025-09-05 11:37:30,296 - INFO - get_user_content:288 - Phase 1: Trying profile method for livod572
-2025-09-05 11:37:30,481 - INFO - get_user_content:306 - Profile method found 1 posts for livod572
-2025-09-05 11:37:30,481 - INFO - get_user_content:306 - Profile method found 1 posts for livod572
-2025-09-05 11:37:37,506 - INFO - get_user_content:334 - Profile method found 9 comments for livod572
-2025-09-05 11:37:37,506 - INFO - get_user_content:334 - Profile method found 9 comments for livod572
-2025-09-05 11:37:37,506 - INFO - get_user_content:423 - Final results for livod572: 10 items total (1 posts, 9 comments)
-2025-09-05 11:37:37,506 - INFO - get_user_content:423 - Final results for livod572: 10 items total (1 posts, 9 comments)
-2025-09-05 11:37:37,507 - INFO - get_user_content:433 - Most recent content timestamps: ['2024-12-13 07:23:15', '2022-03-04 13:00:05', '2022-02-23 06:01:17', '2021-10-03 16:52:56', '2021-08-20 12:48:18']
-2025-09-05 11:37:37,507 - INFO - check_for_new_content:507 - Retrieved 10 items for livod572
-2025-09-05 11:37:37,507 - INFO - check_for_new_content:503 - Checking user: accomplished4363
-2025-09-05 11:37:37,507 - INFO - get_user_content:281 - Fetching content for user: accomplished4363 (limit: 25, init: False)
-2025-09-05 11:37:37,508 - INFO - get_user_content:288 - Phase 1: Trying profile method for accomplished4363
-2025-09-05 11:37:37,507 - INFO - get_user_content:433 - Most recent content timestamps: ['2024-12-13 07:23:15', '2022-03-04 13:00:05', '2022-02-23 06:01:17', '2021-10-03 16:52:56', '2021-08-20 12:48:18']
-2025-09-05 11:37:37,507 - INFO - check_for_new_content:507 - Retrieved 10 items for livod572
-2025-09-05 11:37:37,507 - INFO - check_for_new_content:503 - Checking user: accomplished4363
-2025-09-05 11:37:37,507 - INFO - get_user_content:281 - Fetching content for user: accomplished4363 (limit: 25, init: False)
-2025-09-05 11:37:37,508 - INFO - get_user_content:288 - Phase 1: Trying profile method for accomplished4363
-2025-09-05 11:37:37,704 - INFO - get_user_content:306 - Profile method found 3 posts for accomplished4363
-2025-09-05 11:37:37,704 - INFO - get_user_content:306 - Profile method found 3 posts for accomplished4363
-2025-09-05 11:37:48,920 - INFO - get_user_content:334 - Profile method found 25 comments for accomplished4363
-2025-09-05 11:37:48,920 - INFO - get_user_content:423 - Final results for accomplished4363: 28 items total (3 posts, 25 comments)
-2025-09-05 11:37:48,920 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 15:02:51', '2025-09-02 04:44:36', '2025-08-24 16:40:46', '2025-08-17 08:57:27', '2025-08-17 08:53:49']
-2025-09-05 11:37:48,920 - INFO - check_for_new_content:507 - Retrieved 25 items for accomplished4363
-2025-09-05 11:37:48,920 - INFO - get_user_content:334 - Profile method found 25 comments for accomplished4363
-2025-09-05 11:37:48,920 - INFO - get_user_content:423 - Final results for accomplished4363: 28 items total (3 posts, 25 comments)
-2025-09-05 11:37:48,920 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-09-03 15:02:51', '2025-09-02 04:44:36', '2025-08-24 16:40:46', '2025-08-17 08:57:27', '2025-08-17 08:53:49']
-2025-09-05 11:37:48,920 - INFO - check_for_new_content:507 - Retrieved 25 items for accomplished4363
-2025-09-05 11:37:48,971 - INFO - check_for_new_content:503 - Checking user: affectionate_box4185
-2025-09-05 11:37:48,971 - INFO - check_for_new_content:503 - Checking user: affectionate_box4185
-2025-09-05 11:37:48,971 - INFO - get_user_content:281 - Fetching content for user: affectionate_box4185 (limit: 25, init: False)
-2025-09-05 11:37:48,971 - INFO - get_user_content:281 - Fetching content for user: affectionate_box4185 (limit: 25, init: False)
-2025-09-05 11:37:48,971 - INFO - get_user_content:288 - Phase 1: Trying profile method for affectionate_box4185
-2025-09-05 11:37:48,971 - INFO - get_user_content:288 - Phase 1: Trying profile method for affectionate_box4185
-2025-09-05 11:37:49,167 - INFO - get_user_content:306 - Profile method found 3 posts for affectionate_box4185
-2025-09-05 11:37:49,167 - INFO - get_user_content:306 - Profile method found 3 posts for affectionate_box4185
-2025-09-05 11:37:56,063 - INFO - get_user_content:334 - Profile method found 25 comments for affectionate_box4185
-2025-09-05 11:37:56,063 - INFO - get_user_content:334 - Profile method found 25 comments for affectionate_box4185
-2025-09-05 11:37:56,064 - INFO - get_user_content:423 - Final results for affectionate_box4185: 28 items total (3 posts, 25 comments)
-2025-09-05 11:37:56,064 - INFO - get_user_content:423 - Final results for affectionate_box4185: 28 items total (3 posts, 25 comments)
-2025-09-05 11:37:56,064 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-08-22 12:08:53', '2025-08-14 12:51:42', '2025-08-13 12:01:01', '2025-08-11 10:50:03', '2025-08-08 11:58:47']
-2025-09-05 11:37:56,064 - INFO - get_user_content:433 - Most recent content timestamps: ['2025-08-22 12:08:53', '2025-08-14 12:51:42', '2025-08-13 12:01:01', '2025-08-11 10:50:03', '2025-08-08 11:58:47']
-2025-09-05 11:37:56,064 - INFO - check_for_new_content:507 - Retrieved 25 items for affectionate_box4185
-2025-09-05 11:37:56,064 - INFO - check_for_new_content:507 - Retrieved 25 items for affectionate_box4185
-2025-09-05 11:37:56,066 - INFO - check_for_new_content:534 - Adding 14 old entries to database silently
-2025-09-05 11:37:56,066 - INFO - check_for_new_content:534 - Adding 14 old entries to database silently
-2025-09-05 11:37:56,066 - INFO - check_for_new_content:538 - Found 1 NEW entries total!
-2025-09-05 11:37:56,066 - INFO - check_for_new_content:538 - Found 1 NEW entries total!
-2025-09-05 11:37:56,066 - INFO - check_for_new_content:542 - New content breakdown: {'rierrium (comment)': 1}
-2025-09-05 11:37:56,066 - INFO - check_for_new_content:542 - New content breakdown: {'rierrium (comment)': 1}
-2025-09-05 11:37:56,080 - INFO - save_data_with_retry:160 - Successfully saved data to /data/reddit_tracker_data.csv
-2025-09-05 11:37:56,080 - INFO - save_data_with_retry:160 - Successfully saved data to /data/reddit_tracker_data.csv
-2025-09-05 11:37:56,080 - INFO - check_for_new_content:549 - Saved data to /data/reddit_tracker_data.csv
-2025-09-05 11:37:56,080 - INFO - check_for_new_content:549 - Saved data to /data/reddit_tracker_data.csv
-2025-09-05 11:37:57,081 - ERROR - send_telegram_message:649 - Telegram error (attempt 1): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
-2025-09-05 11:37:57,081 - ERROR - send_telegram_message:649 - Telegram error (attempt 1): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
-2025-09-05 11:38:00,085 - ERROR - send_telegram_message:649 - Telegram error (attempt 2): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
-2025-09-05 11:38:00,085 - ERROR - send_telegram_message:649 - Telegram error (attempt 2): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
-2025-09-05 11:38:03,088 - ERROR - send_telegram_message:649 - Telegram error (attempt 3): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
-2025-09-05 11:38:03,088 - ERROR - send_telegram_message:649 - Telegram error (attempt 3): Pool timeout: All connections in the connection pool are occupied. Request was *not* sent to Telegram. Consider adjusting the connection pool size or the pool timeout.
-2025-09-05 11:38:03,089 - ERROR - send_telegram_message:657 - Failed to send message after 3 attempts
-2025-09-05 11:38:03,089 - ERROR - send_telegram_message:657 - Failed to send message after 3 attempts
-2025-09-05 11:38:03,089 - ERROR - queue_messages_for_telegram:615 - ✗ Failed to send notification for rierrium (comment)
-2025-09-05 11:38:03,089 - ERROR - queue_messages_for_telegram:615 - ✗ Failed to send notification for rierrium (comment)
+==> Cloning from https://github.com/Rierra/usrtrkkr
+==> Checking out commit c78781b22c1297f810710a3d50ecacb8e8a51553 in branch main
+==> Using Python version 3.13.4 (default)
+==> Docs on specifying a Python version: https://render.com/docs/python-version
+==> Using Poetry version 2.1.3 (default)
+==> Docs on specifying a Poetry version: https://render.com/docs/poetry-version
+==> Running build command 'pip install -r requirements.txt'...
+Collecting praw==7.8.1 (from -r requirements.txt (line 1))
+  Downloading praw-7.8.1-py3-none-any.whl.metadata (9.4 kB)
+Collecting python-telegram-bot==21.6 (from -r requirements.txt (line 2))
+  Downloading python_telegram_bot-21.6-py3-none-any.whl.metadata (17 kB)
+Collecting schedule==1.2.0 (from -r requirements.txt (line 3))
+  Downloading schedule-1.2.0-py2.py3-none-any.whl.metadata (3.3 kB)
+Collecting python-dotenv==1.0.0 (from -r requirements.txt (line 4))
+  Downloading python_dotenv-1.0.0-py3-none-any.whl.metadata (21 kB)
+Collecting requests==2.31.0 (from -r requirements.txt (line 5))
+  Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting Flask==2.3.3 (from -r requirements.txt (line 6))
+  Downloading flask-2.3.3-py3-none-any.whl.metadata (3.6 kB)
+Collecting gunicorn (from -r requirements.txt (line 7))
+  Downloading gunicorn-23.0.0-py3-none-any.whl.metadata (4.4 kB)
+Collecting wheel>=0.40.0 (from -r requirements.txt (line 10))
+  Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+Collecting setuptools>=68.0.0 (from -r requirements.txt (line 11))
+  Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting prawcore<3,>=2.4 (from praw==7.8.1->-r requirements.txt (line 1))
+  Downloading prawcore-2.4.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting update_checker>=0.18 (from praw==7.8.1->-r requirements.txt (line 1))
+  Downloading update_checker-0.18.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting websocket-client>=0.54.0 (from praw==7.8.1->-r requirements.txt (line 1))
+  Downloading websocket_client-1.8.0-py3-none-any.whl.metadata (8.0 kB)
+Collecting httpx~=0.27 (from python-telegram-bot==21.6->-r requirements.txt (line 2))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting charset-normalizer<4,>=2 (from requests==2.31.0->-r requirements.txt (line 5))
+  Downloading charset_normalizer-3.4.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests==2.31.0->-r requirements.txt (line 5))
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests==2.31.0->-r requirements.txt (line 5))
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests==2.31.0->-r requirements.txt (line 5))
+  Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting Werkzeug>=2.3.7 (from Flask==2.3.3->-r requirements.txt (line 6))
+  Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting Jinja2>=3.1.2 (from Flask==2.3.3->-r requirements.txt (line 6))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==2.3.3->-r requirements.txt (line 6))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==2.3.3->-r requirements.txt (line 6))
+  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting blinker>=1.6.2 (from Flask==2.3.3->-r requirements.txt (line 6))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting anyio (from httpx~=0.27->python-telegram-bot==21.6->-r requirements.txt (line 2))
+  Downloading anyio-4.10.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting httpcore==1.* (from httpx~=0.27->python-telegram-bot==21.6->-r requirements.txt (line 2))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx~=0.27->python-telegram-bot==21.6->-r requirements.txt (line 2))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting packaging (from gunicorn->-r requirements.txt (line 7))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==2.3.3->-r requirements.txt (line 6))
+  Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting sniffio>=1.1 (from anyio->httpx~=0.27->python-telegram-bot==21.6->-r requirements.txt (line 2))
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Downloading praw-7.8.1-py3-none-any.whl (189 kB)
+Downloading python_telegram_bot-21.6-py3-none-any.whl (652 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 652.1/652.1 kB 31.9 MB/s eta 0:00:00
+Downloading schedule-1.2.0-py2.py3-none-any.whl (11 kB)
+Downloading python_dotenv-1.0.0-py3-none-any.whl (19 kB)
+Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+Downloading flask-2.3.3-py3-none-any.whl (96 kB)
+Downloading charset_normalizer-3.4.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (151 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading prawcore-2.4.0-py3-none-any.whl (17 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
+Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 52.6 MB/s eta 0:00:00
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+Downloading click-8.2.1-py3-none-any.whl (102 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Downloading update_checker-0.18.0-py3-none-any.whl (7.0 kB)
+Downloading websocket_client-1.8.0-py3-none-any.whl (58 kB)
+Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Downloading anyio-4.10.0-py3-none-any.whl (107 kB)
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Installing collected packages: wheel, websocket-client, urllib3, sniffio, setuptools, schedule, python-dotenv, packaging, MarkupSafe, itsdangerous, idna, h11, click, charset-normalizer, certifi, blinker, Werkzeug, requests, Jinja2, httpcore, gunicorn, anyio, update_checker, prawcore, httpx, Flask, python-telegram-bot, praw
+Successfully installed Flask-2.3.3 Jinja2-3.1.6 MarkupSafe-3.0.2 Werkzeug-3.1.3 anyio-4.10.0 blinker-1.9.0 certifi-2025.8.3 charset-normalizer-3.4.3 click-8.2.1 gunicorn-23.0.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.10 itsdangerous-2.2.0 packaging-25.0 praw-7.8.1 prawcore-2.4.0 python-dotenv-1.0.0 python-telegram-bot-21.6 requests-2.31.0 schedule-1.2.0 setuptools-80.9.0 sniffio-1.3.1 update_checker-0.18.0 urllib3-2.5.0 websocket-client-1.8.0 wheel-0.45.1
+[notice] A new release of pip is available: 25.1.1 -> 25.2
+[notice] To update, run: pip install --upgrade pip
+==> Uploading build...
+==> Uploaded in 3.5s. Compression took 3.8s
+==> Build successful 🎉
+==> Deploying...
+==> Running 'python app.py'
+2025-09-05 11:53:16,328 - INFO - main:1018 - Initializing Reddit tracker...
+2025-09-05 11:53:16,328 - INFO - main:1018 - Initializing Reddit tracker...
+Traceback (most recent call last):
+  File "/opt/render/project/src/app.py", line 1056, in <module>
+    main()
+    ~~~~^^
+  File "/opt/render/project/src/app.py", line 1019, in main
+    tracker = RedditUserTracker(REDDIT_CREDENTIALS, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, telegram_bot.application)
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'application'
+2025-09-05 11:53:16,330 - INFO - cleanup_on_shutdown:974 - Shutting down gracefully...
+2025-09-05 11:53:16,330 - INFO - cleanup_on_shutdown:974 - Shutting down gracefully...
+==> Exited with status 1
+==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+==> Running 'python app.py'
+2025-09-05 11:53:21,037 - INFO - main:1018 - Initializing Reddit tracker...
+2025-09-05 11:53:21,037 - INFO - main:1018 - Initializing Reddit tracker...
+2025-09-05 11:53:21,090 - INFO - cleanup_on_shutdown:974 - Shutting down gracefully...
+Traceback (most recent call last):
+  File "/opt/render/project/src/app.py", line 1056, in <module>
+    main()
+    ~~~~^^
+  File "/opt/render/project/src/app.py", line 1019, in main
+    tracker = RedditUserTracker(REDDIT_CREDENTIALS, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, telegram_bot.application)
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'application'
+2025-09-05 11:53:21,090 - INFO - cleanup_on_shutdown:974 - Shutting down gracefully...
