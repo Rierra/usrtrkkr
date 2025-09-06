@@ -984,20 +984,18 @@ def main():
     # Set the tracker on the bot to break circular dependency
     telegram_bot.set_tracker(tracker)
     
-    # Start Telegram bot in a separate thread
-    logger.info("Starting Telegram bot thread...")
-    bot_thread = threading.Thread(
-        target=telegram_bot.start_bot,
+    # Get port from environment (Render provides this)
+    port = int(os.environ.get('PORT', 5000))
+
+    # Start Flask app in a separate thread
+    logger.info("Starting Flask web server in a background thread...")
+    flask_thread = threading.Thread(
+        target=lambda: app.run(host='0.0.0.0', port=port, debug=False, threaded=True),
         daemon=True
     )
-    bot_thread.start()
+    flask_thread.start()
 
-    # Wait for bot to be ready before starting scheduler
-    if not telegram_bot.wait_for_bot_ready(timeout=30):
-        logger.error("Failed to start Telegram bot - exiting")
-        return
-
-    # Now start scheduler
+    # Start scheduler in a separate thread
     logger.info("Starting scheduler thread...")
     scheduler_thread = threading.Thread(
         target=run_scheduler, 
@@ -1006,19 +1004,12 @@ def main():
     )
     scheduler_thread.start()
     
-    logger.info("Starting Flask web server...")
-    logger.info(f"Tracked users on startup: {list(tracker.tracked_users)}")
-    logger.info(f"Data entries on startup: {len(tracker.data)}")
-    
-    # Get port from environment (Render provides this)
-    port = int(os.environ.get('PORT', 5000))
-    
-    # Start Flask app
-    try:
-        app.run(host='0.0.0.0', port=port, debug=False, threaded=True)
-    except KeyboardInterrupt:
-        logger.info("Received shutdown signal")
-        cleanup_on_shutdown()
+    # Start the Telegram bot in the main thread (this is blocking)
+    logger.info("Starting Telegram bot in the main thread...")
+    telegram_bot.start_bot()
+
+    # The script will block here until the bot is stopped.
+    # The cleanup_on_shutdown function will be called on exit.
 
 if __name__ == "__main__":
     main()
