@@ -676,16 +676,24 @@ class TelegramBot:
     def start_bot(self):
         """Start the Telegram bot polling."""
         logger.info("Starting Telegram bot polling...")
-        # Get the current event loop and store it in the tracker
+    
+        # Create event loop
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
+    
         if self.tracker:
             self.tracker.telegram_loop = loop
     
-        # Signal that the loop is ready
-        self.loop_ready_event.set()
-        logger.info("Telegram event loop ready, signaling scheduler...")
+        # Start the application, then signal ready
+        async def signal_ready():
+            await asyncio.sleep(1)  # Give the bot time to fully start
+            self.loop_ready_event.set()
+            logger.info("Telegram event loop ready and running, signaling scheduler...")
     
+        # Schedule the ready signal
+        loop.create_task(signal_ready())
+    
+        # Start polling (this blocks)
         self.application.run_polling()
 
     def wait_for_bot_ready(self, timeout=30):
