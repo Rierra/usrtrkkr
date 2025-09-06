@@ -55,17 +55,8 @@ class RedditUserTracker:
         try:
             logger.info("Initializing RedditUserTracker...")
             self.telegram_application = telegram_application # Store the application instance
-            # Get the event loop from the application's updater
-            import asyncio
-            try:
-                self.telegram_loop = telegram_application.updater.loop
-            except AttributeError:
-                # Fallback: get the current event loop or create a new one
-                try:
-                    self.telegram_loop = asyncio.get_running_loop()
-                except RuntimeError:
-                    self.telegram_loop = asyncio.new_event_loop()
-                    asyncio.set_event_loop(self.telegram_loop)
+            # Store the application for later loop access
+            self.telegram_loop = None  # Will be set when bot starts
             
             # Initialize Reddit API
             self.reddit = praw.Reddit(
@@ -602,8 +593,16 @@ class RedditUserTracker:
     def queue_messages_for_telegram(self, new_entries):
         """Send messages to Telegram by creating tasks on the bot's event loop."""
         try:
+            # Wait a moment for the loop to be available if it's not ready yet
+            max_wait = 30  # seconds
+            wait_count = 0
+            while (not self.telegram_loop or not self.telegram_loop.is_running()) and wait_count < max_wait:
+                logger.info(f"Waiting for Telegram event loop to be ready... ({wait_count}s)")
+                time.sleep(1)
+                wait_count += 1
+            
             if not self.telegram_loop or not self.telegram_loop.is_running():
-                logger.error("Telegram event loop is not available or not running. Cannot send messages.")
+                logger.error("Telegram event loop is not available or not running after waiting. Cannot send messages.")
                 return
 
             logger.info(f"Queueing {len(new_entries)} messages for sending via thread-safe call.")
@@ -676,6 +675,11 @@ class TelegramBot:
     def start_bot(self):
         """Start the Telegram bot polling."""
         logger.info("Starting Telegram bot polling...")
+        # Get the current event loop and store it in the tracker
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        if self.tracker:
+            self.tracker.telegram_loop = loop
         self.application.run_polling()
 
     async def start(self, update, context):
