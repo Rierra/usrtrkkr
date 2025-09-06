@@ -657,6 +657,7 @@ class TelegramBot:
     def __init__(self, telegram_token):
         self.tracker = None # Initialize tracker as None
         self.application = Application.builder().token(telegram_token).build()
+        self.loop_ready_event = threading.Event()
 
         # Add handlers
         self.application.add_handler(CommandHandler("start", self.start))
@@ -680,7 +681,22 @@ class TelegramBot:
         asyncio.set_event_loop(loop)
         if self.tracker:
             self.tracker.telegram_loop = loop
+    
+        # Signal that the loop is ready
+        self.loop_ready_event.set()
+        logger.info("Telegram event loop ready, signaling scheduler...")
+    
         self.application.run_polling()
+
+    def wait_for_bot_ready(self, timeout=30):
+        """Wait for the bot's event loop to be ready"""
+        logger.info("Waiting for Telegram bot to be ready...")
+        if self.loop_ready_event.wait(timeout):
+            logger.info("Telegram bot is ready!")
+            return True
+        else:
+            logger.error(f"Telegram bot not ready after {timeout} seconds")
+            return False
 
     async def start(self, update, context):
         """Start command handler"""
@@ -960,15 +976,6 @@ def main():
     # Set the tracker on the bot to break circular dependency
     telegram_bot.set_tracker(tracker)
     
-    # Start scheduler in a separate thread
-    logger.info("Starting scheduler thread...")
-    scheduler_thread = threading.Thread(
-        target=run_scheduler, 
-        args=(tracker, telegram_bot, shutdown_event),
-        daemon=True
-    )
-    scheduler_thread.start()
-    
     # Start Telegram bot in a separate thread
     logger.info("Starting Telegram bot thread...")
     bot_thread = threading.Thread(
@@ -976,6 +983,20 @@ def main():
         daemon=True
     )
     bot_thread.start()
+
+    # Wait for bot to be ready before starting scheduler
+    if not telegram_bot.wait_for_bot_ready(timeout=30):
+        logger.error("Failed to start Telegram bot - exiting")
+        return
+
+    # Now start scheduler
+    logger.info("Starting scheduler thread...")
+    scheduler_thread = threading.Thread(
+        target=run_scheduler, 
+        args=(tracker, telegram_bot, shutdown_event),
+        daemon=True
+    )
+    scheduler_thread.start()
     
     logger.info("Starting Flask web server...")
     logger.info(f"Tracked users on startup: {list(tracker.tracked_users)}")
