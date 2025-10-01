@@ -31,8 +31,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s',
     handlers=[
-        logging.StreamHandler(sys.stdout),  # Explicitly log to stdout
-        logging.StreamHandler(sys.stderr)   # Also log errors to stderr
+        logging.StreamHandler(sys.stdout)  # Single handler to stdout
     ]
 )
 logger = logging.getLogger(__name__)
@@ -82,6 +81,8 @@ class RedditUserTracker:
             # Data storage
             self.tracked_users = set()
             self.user_add_timestamps = {}  # Track when each user was added
+            self.filtered_subreddits = set()  # Store filtered subreddits
+            self.subreddits_file = os.path.join(data_dir, 'filtered_subreddits.json')
             self.data_file = os.path.join(data_dir, 'reddit_tracker_data.csv')
             self.users_file = os.path.join(data_dir, 'tracked_users.json') 
             self.last_check_file = os.path.join(data_dir, 'last_check.json')
@@ -93,6 +94,7 @@ class RedditUserTracker:
             
             # Load existing data
             self.load_tracked_users()
+            self.load_filtered_subreddits()
             self.load_existing_data()
             
             logger.info("RedditUserTracker initialization complete")
@@ -127,6 +129,26 @@ class RedditUserTracker:
             logger.info(f"Saved tracked users: {list(self.tracked_users)}")
         except Exception as e:
             logger.error(f"Error saving tracked users: {e}")
+
+    def load_filtered_subreddits(self):
+        """Load filtered subreddits from file"""
+        try:
+            if os.path.exists(self.subreddits_file):
+                with open(self.subreddits_file, 'r') as f:
+                    self.filtered_subreddits = set(json.load(f))
+            logger.info(f"Loaded {len(self.filtered_subreddits)} filtered subreddits: {list(self.filtered_subreddits)}")
+        except Exception as e:
+            logger.error(f"Error loading filtered subreddits: {e}")
+            self.filtered_subreddits = set()
+
+    def save_filtered_subreddits(self):
+        """Save filtered subreddits to file"""
+        try:
+            with open(self.subreddits_file, 'w') as f:
+                json.dump(list(self.filtered_subreddits), f)
+            logger.info(f"Saved filtered subreddits: {list(self.filtered_subreddits)}")
+        except Exception as e:
+            logger.error(f"Error saving filtered subreddits: {e}")
     
     def load_existing_data(self):
         """Load existing tracking data"""
@@ -256,6 +278,74 @@ class RedditUserTracker:
             return "Tracked users:\n" + "\n".join(f"- {user}" for user in sorted(self.tracked_users))
         else:
             return "No users currently being tracked"
+
+    def add_subreddits(self, subreddits):
+        """Add subreddits to filter (can be comma or space separated)"""
+        try:
+            # Handle both comma and space separation
+            if isinstance(subreddits, str):
+                # Split by comma first, then by space
+                sub_list = [s.strip() for s in subreddits.replace(',', ' ').split()]
+            else:
+                sub_list = subreddits
+            
+            added = []
+            for sub in sub_list:
+                sub = sub.lower().strip()
+                if sub.startswith('r/'):
+                    sub = sub[2:]
+                if sub and sub not in self.filtered_subreddits:
+                    self.filtered_subreddits.add(sub)
+                    added.append(sub)
+            
+            if added:
+                self.save_filtered_subreddits()
+                return f"Added subreddit filters: {', '.join(added)}\nTotal filters: {len(self.filtered_subreddits)}"
+            else:
+                return "No new subreddits added (already filtered or invalid)"
+        except Exception as e:
+            logger.error(f"Error adding subreddits: {e}")
+            return f"Error adding subreddits: {e}"
+
+    def remove_subreddits(self, subreddits):
+        """Remove subreddits from filter"""
+        try:
+            if isinstance(subreddits, str):
+                sub_list = [s.strip() for s in subreddits.replace(',', ' ').split()]
+            else:
+                sub_list = subreddits
+            
+            removed = []
+            for sub in sub_list:
+                sub = sub.lower().strip()
+                if sub.startswith('r/'):
+                    sub = sub[2:]
+                if sub in self.filtered_subreddits:
+                    self.filtered_subreddits.remove(sub)
+                    removed.append(sub)
+            
+            if removed:
+                self.save_filtered_subreddits()
+                return f"Removed subreddit filters: {', '.join(removed)}\nRemaining filters: {len(self.filtered_subreddits)}"
+            else:
+                return "No subreddits removed (not in filter list)"
+        except Exception as e:
+            logger.error(f"Error removing subreddits: {e}")
+            return f"Error removing subreddits: {e}"
+
+    def list_subreddits(self):
+        """List all filtered subreddits"""
+        if self.filtered_subreddits:
+            return f"Filtered subreddits ({len(self.filtered_subreddits)}):\n" + "\n".join(f"- r/{sub}" for sub in sorted(self.filtered_subreddits))
+        else:
+            return "No subreddit filters active (tracking all subreddits)"
+
+    def clear_subreddits(self):
+        """Clear all subreddit filters"""
+        count = len(self.filtered_subreddits)
+        self.filtered_subreddits.clear()
+        self.save_filtered_subreddits()
+        return f"Cleared all {count} subreddit filters. Now tracking all subreddits."
     
     def reset_all_data(self):
         """Reset all stored data"""
@@ -520,11 +610,20 @@ class RedditUserTracker:
                     if not existing:
                         # This content is not in our database yet
                         if content_created_time > user_add_time:
-                            # This is genuinely NEW content (created after user was added)
-                            logger.info(f"NEW {item['content_type']} found for {username}: {item['id']} - {item['title'][:50]}...")
-                            logger.info(f"   Created: {datetime.fromtimestamp(item['created_utc']).strftime('%Y-%m-%d %H:%M:%S')} UTC (after user was added)")
-                            logger.info(f"   Score: {item['score']}, Subreddit: r/{item['subreddit']}")
-                            new_entries.append(item)
+                            # Check if subreddit filter is active
+                            item_subreddit = item['subreddit'].lower()
+                            if self.filtered_subreddits and item_subreddit not in self.filtered_subreddits:
+                                # Content is in a non-filtered subreddit, skip notification but add to DB silently
+                                logger.info(f"NEW {item['content_type']} found for {username} in r/{item_subreddit} but not in filter list - adding to DB silently")
+                                silent_entries.append(item)
+                            else:
+                                # This is genuinely NEW content (created after user was added) and passes filter
+                                logger.info(f"NEW {item['content_type']} found for {username}: {item['id']} - {item['title'][:50]}...")
+                                logger.info(f"   Created: {datetime.fromtimestamp(item['created_utc']).strftime('%Y-%m-%d %H:%M:%S')} UTC (after user was added)")
+                                logger.info(f"   Score: {item['score']}, Subreddit: r/{item['subreddit']}")
+                                if self.filtered_subreddits:
+                                    logger.info(f"   Passed subreddit filter (r/{item_subreddit} is in filter list)")
+                                new_entries.append(item)
                         else:
                             # This is old content that we missed during initialization - add to DB but don't notify
                             logger.info(f"OLD {item['content_type']} found for {username}: {item['id']} (created before user was added) - adding to DB silently")
@@ -669,6 +768,11 @@ class TelegramBot:
         self.application.add_handler(CommandHandler("help", self.help_command))
         self.application.add_handler(CommandHandler("debug", self.debug_command))
 
+        self.application.add_handler(CommandHandler("sub", self.add_subreddits))
+        self.application.add_handler(CommandHandler("unsub", self.remove_subreddits))
+        self.application.add_handler(CommandHandler("listsubs", self.list_subreddits))
+        self.application.add_handler(CommandHandler("clearsubs", self.clear_subreddits))
+
     def set_tracker(self, tracker):
         """Set the tracker instance after initialization."""
         self.tracker = tracker
@@ -807,6 +911,36 @@ Data Breakdown by User:"""
             
         except Exception as e:
             await update.message.reply_text(f"Error getting debug info: {str(e)}")
+
+    async def add_subreddits(self, update, context):
+        """Add subreddit filter command handler"""
+        if not context.args:
+            await update.message.reply_text("Please provide subreddit names. Examples:\n/sub wallstreetbets\n/sub wallstreetbets stocks crypto\n/sub wallstreetbets, stocks, crypto")
+            return
+        
+        subreddits = " ".join(context.args)
+        result = self.tracker.add_subreddits(subreddits)
+        await update.message.reply_text(result)
+
+    async def remove_subreddits(self, update, context):
+        """Remove subreddit filter command handler"""
+        if not context.args:
+            await update.message.reply_text("Please provide subreddit names to remove. Example: /unsub wallstreetbets stocks")
+            return
+        
+        subreddits = " ".join(context.args)
+        result = self.tracker.remove_subreddits(subreddits)
+        await update.message.reply_text(result)
+
+    async def list_subreddits(self, update, context):
+        """List subreddit filters command handler"""
+        result = self.tracker.list_subreddits()
+        await update.message.reply_text(result)
+
+    async def clear_subreddits(self, update, context):
+        """Clear all subreddit filters command handler"""
+        result = self.tracker.clear_subreddits()
+        await update.message.reply_text(result)
     
     async def reset_data(self, update, context):
         """Reset all stored data"""
@@ -821,29 +955,26 @@ Data Breakdown by User:"""
         message = """Reddit User Tracker Commands
 
 /add <username> - Start tracking a user
-  - Initializes with recent content (no spam)
-  - Only notifies about NEW content afterward
-  - Example: /add spez
-
 /remove <username> - Stop tracking a user  
-  - Example: /remove spez
-
 /list - Show all tracked users
 
+/sub <subreddit(s)> - Add subreddit filter(s)
+  - Examples: /sub wallstreetbets
+  - Multiple: /sub wallstreetbets stocks crypto
+  - With commas: /sub wallstreetbets, stocks, crypto
+  
+/unsub <subreddit(s)> - Remove subreddit filter(s)
+/listsubs - Show active subreddit filters
+/clearsubs - Clear all subreddit filters
+
 /check - Manually check for new content
-  - Useful for immediate updates
-
 /debug - Show debug information
-  - See tracked users and data stats
-
 /reset - Clear all stored data
-  - Fresh start for all tracking
-
 /help - Show this help
 
-Auto-checking: Every minute
-Data saved to: reddit_tracker_data.csv
-Fixed: Telegram message delivery issues"""
+Note: When subreddit filters are active, you only get notified for posts/comments in those specific subreddits. All content is still saved to the database.
+
+Auto-checking: Every minute"""
         await update.message.reply_text(message)
 
 # Flask routes for monitoring
